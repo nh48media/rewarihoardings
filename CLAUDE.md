@@ -19,9 +19,9 @@ and submit enquiries — no prices shown publicly.
 - NOT the saffron/ink palette of NH48 Media
 
 ## Supabase config
-- Same project as nh48media
-- New tables: listings, rh_leads, rh_settings
-- New storage bucket: hoarding-photos (public)
+- Dedicated Supabase project (separate from nh48media.com)
+- Tables: listings, rh_leads, rh_settings (schema already run)
+- Storage bucket: hoarding-photos (public, already created)
 - Phone for WhatsApp: +91 8168740234
 
 ## Key rules

@@ -1,6 +1,6 @@
 -- ============================================================
 --  rewarihoardings.com — Supabase Schema
---  Project: Same Supabase project as nh48media.com
+--  Project: Dedicated Supabase project for rewarihoardings.com (separate from nh48media.com)
 --  Run this in Supabase Dashboard > SQL Editor
 -- ============================================================
 
