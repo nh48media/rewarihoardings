@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@theme {
+  /* Brand colours */
+  --color-brand-yellow: #FFE600;
+  --color-brand-black:  #0A0A0A;
+
+  /* Fonts */
+  --font-condensed: var(--font-barlow-condensed), sans-serif;
+  --font-sans:      var(--font-barlow), sans-serif;
+
+  /* Site defaults */
+  --color-background: #0A0A0A;
+  --color-foreground: #EDEDED;
+}
+
+:root {
+  --background: #0A0A0A;
+  --foreground: #EDEDED;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-barlow), sans-serif;
+}
