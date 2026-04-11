@@ -59,11 +59,7 @@ const LISTING_TYPES = [
   'railway-station','cinema-advertising','look-walker','exhibition-stall','water-tank',
 ]
 
-const LOCALITIES = [
-  'NH-48 Entry Point','Delhi Road','Sadar Bazar','Rewari Bus Stand','Rewari Railway Station',
-  'Subhash Nagar','Model Town','Gurudwara Chowk','New Grain Market','Majra Chowk',
-  'Jat College Road','Circular Road','Dharan Road','Rewari Industrial Area','Kosli Road',
-]
+// Localities are fetched from DB — see props
 
 const FACINGS = ['North','South','East','West','NH-48 Inbound','NH-48 Outbound','Both Sides']
 const STRUCTURES = ['Ground-mounted','Rooftop','Bridge-mounted','Wall','Gantry span']
@@ -88,9 +84,17 @@ function autoMetaDesc(f: FormData) {
 
 interface Props {
   existing?: ListingRow
+  localities?: string[]
 }
 
-export default function ListingForm({ existing }: Props) {
+const FALLBACK_LOCALITIES = [
+  'NH-48 Entry Point','Delhi Road','Sadar Bazar','Rewari Bus Stand','Rewari Railway Station',
+  'Subhash Nagar','Model Town','Gurudwara Chowk','New Grain Market','Majra Chowk',
+  'Jat College Road','Circular Road','Dharan Road','Rewari Industrial Area','Kosli Road',
+]
+
+export default function ListingForm({ existing, localities: localitiesProp }: Props) {
+  const localities = localitiesProp && localitiesProp.length > 0 ? localitiesProp : FALLBACK_LOCALITIES
   const router = useRouter()
   const [, startTransition] = useTransition()
   const isEdit = !!existing
@@ -302,7 +306,7 @@ export default function ListingForm({ existing }: Props) {
             <select value={form.locality} onChange={e => set('locality', e.target.value)}
               className="w-full bg-[#0d0d0d] border border-[#2a2a2a] text-white px-3 py-2.5 rounded-lg text-sm focus:outline-none focus:border-[#FFE600] transition-colors">
               <option value="">Select locality…</option>
-              {LOCALITIES.map(l => <option key={l} value={l}>{l}</option>)}
+              {localities.map((l: string) => <option key={l} value={l}>{l}</option>)}
             </select>
           </div>
         </div>

@@ -8,6 +8,60 @@ interface Props {
   settings: Record<string, unknown>
 }
 
+function TagEditor({
+  label,
+  tags,
+  onChange,
+}: {
+  label: string
+  tags: string[]
+  onChange: (tags: string[]) => void
+}) {
+  const [input, setInput] = useState('')
+
+  function add() {
+    const val = input.trim()
+    if (!val || tags.includes(val)) return
+    onChange([...tags, val])
+    setInput('')
+  }
+
+  function remove(tag: string) {
+    onChange(tags.filter(t => t !== tag))
+  }
+
+  return (
+    <div>
+      <label className="block text-gray-400 text-xs mb-2 font-condensed uppercase tracking-wider">{label}</label>
+      <div className="flex flex-wrap gap-2 mb-3">
+        {tags.map(tag => (
+          <span key={tag} className="flex items-center gap-1.5 bg-[#1a1a1a] border border-[#2a2a2a] text-gray-300 text-xs px-2.5 py-1.5 rounded-lg font-condensed">
+            {tag}
+            <button type="button" onClick={() => remove(tag)}
+              className="text-gray-600 hover:text-red-400 transition-colors text-sm leading-none">
+              ×
+            </button>
+          </span>
+        ))}
+        {tags.length === 0 && <p className="text-gray-600 text-xs py-1">No items yet</p>}
+      </div>
+      <div className="flex gap-2">
+        <input
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onKeyDown={e => e.key === 'Enter' && (e.preventDefault(), add())}
+          placeholder="Type and press Enter or click Add…"
+          className="flex-1 bg-[#0d0d0d] border border-[#2a2a2a] text-white px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-[#FFE600] transition-colors"
+        />
+        <button type="button" onClick={add}
+          className="bg-[#FFE600] text-[#0A0A0A] font-condensed font-bold px-4 py-2 rounded-lg text-sm hover:bg-yellow-300 transition-colors">
+          Add
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export default function SettingsForm({ settings }: Props) {
   const router = useRouter()
   const [, startTransition] = useTransition()
@@ -24,6 +78,10 @@ export default function SettingsForm({ settings }: Props) {
     ga4_measurement_id: String(settings.ga4_measurement_id ?? ''),
   })
 
+  const [localities, setLocalities] = useState<string[]>(
+    Array.isArray(settings.rewari_localities) ? settings.rewari_localities as string[] : []
+  )
+
   function set(field: keyof typeof form, value: string) {
     setForm(f => ({ ...f, [field]: value }))
   }
@@ -33,9 +91,12 @@ export default function SettingsForm({ settings }: Props) {
     setSaved(false)
     const supabase = createClient()
 
-    const updates = Object.entries(form).map(([key, value]) =>
-      supabase.from('rh_settings').upsert({ key, value: JSON.stringify(value) })
-    )
+    const updates = [
+      ...Object.entries(form).map(([key, value]) =>
+        supabase.from('rh_settings').upsert({ key, value: JSON.stringify(value) })
+      ),
+      supabase.from('rh_settings').upsert({ key: 'rewari_localities', value: JSON.stringify(localities) }),
+    ]
     await Promise.all(updates)
 
     setSaving(false)
@@ -51,7 +112,6 @@ export default function SettingsForm({ settings }: Props) {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         secret: process.env.NEXT_PUBLIC_REVALIDATE_SECRET,
-        ...(path ? {} : {}),
       }),
     })
     setRevalidating(false)
@@ -85,6 +145,15 @@ export default function SettingsForm({ settings }: Props) {
             placeholder="love@nh48media.com"
             className="w-full bg-[#0d0d0d] border border-[#2a2a2a] text-white px-3 py-2.5 rounded-lg text-sm focus:outline-none focus:border-[#FFE600] transition-colors" />
         </div>
+      </section>
+
+      {/* Localities */}
+      <section className="bg-[#111111] border border-[#1e1e1e] rounded-xl p-6 space-y-4">
+        <h2 className="text-white font-condensed font-bold text-lg tracking-wide border-b border-[#1e1e1e] pb-3">
+          Localities
+        </h2>
+        <p className="text-gray-500 text-sm">These appear in the Add/Edit Listing locality dropdown.</p>
+        <TagEditor label="Rewari Localities" tags={localities} onChange={setLocalities} />
       </section>
 
       {/* Site Copy */}

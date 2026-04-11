@@ -8,13 +8,14 @@ export default async function EditListingPage({ params }: { params: { id: string
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/admin/login')
 
-  const { data: listing } = await supabase
-    .from('listings')
-    .select('*')
-    .eq('id', params.id)
-    .single()
+  const [{ data: listing }, { data: setting }] = await Promise.all([
+    supabase.from('listings').select('*').eq('id', params.id).single(),
+    supabase.from('rh_settings').select('value').eq('key', 'rewari_localities').single(),
+  ])
 
   if (!listing) notFound()
+
+  const localities: string[] = Array.isArray(setting?.value) ? setting.value as string[] : []
 
   return (
     <div className="p-6">
@@ -31,7 +32,7 @@ export default async function EditListingPage({ params }: { params: { id: string
           View Live Page ↗
         </Link>
       </div>
-      <ListingForm existing={listing} />
+      <ListingForm existing={listing} localities={localities} />
     </div>
   )
 }
