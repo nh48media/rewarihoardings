@@ -7,6 +7,7 @@ import ListingCard, { fmtLabel } from '@/components/listing/ListingCard'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import FAQSchema from '@/components/seo/FAQSchema'
 import type { ListingRow } from '@/types/database'
+import { EDITORIALS, buildFallbackEditorial } from '../_editorials'
 
 export const revalidate = 3600
 
@@ -612,6 +613,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 export default async function TypePage({ params }: Props) {
   const { slug } = await params
   const fd = FORMAT_DATA[slug] ?? buildFallback(slug)
+  const ed = EDITORIALS[slug] ?? buildFallbackEditorial(fd.name)
 
   const supabase = await createClient()
   const { data: listings } = await supabase
@@ -641,6 +643,29 @@ export default async function TypePage({ params }: Props) {
     <>
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={fd.faqs.map(f => ({ question: f.q, answer: f.a }))} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: ed.headline,
+            description: `${fd.desc.split('.')[0]}. Browse available ${fd.name.toLowerCase()} locations in Rewari and get a quote within 24 hours.`,
+            url: `https://rewarihoardings.com/type/${slug}`,
+            datePublished: '2025-01-01',
+            dateModified: '2026-05-14',
+            author: { '@type': 'Organization', name: 'Rewari Hoardings', url: 'https://rewarihoardings.com' },
+            publisher: {
+              '@type': 'Organization',
+              name: 'Rewari Hoardings',
+              url: 'https://rewarihoardings.com',
+              logo: { '@type': 'ImageObject', url: 'https://rewarihoardings.com/logo.png' },
+            },
+            mainEntityOfPage: { '@type': 'WebPage', '@id': `https://rewarihoardings.com/type/${slug}` },
+            about: { '@type': 'Thing', name: `${fd.name} Outdoor Advertising` },
+          }),
+        }}
+      />
 
       {/* ── Breadcrumb nav ── */}
       <div className="bg-[#0A0A0A] border-b border-[#1a1a1a] px-10 py-3">
@@ -790,6 +815,59 @@ export default async function TypePage({ params }: Props) {
             </ul>
           </div>
         </div>
+      </section>
+
+      {/* ── Editorial Article ── */}
+      <section className="bg-[#111111] px-10 py-14 border-t border-[#2A2A2A]">
+        <article className="max-w-4xl mx-auto">
+          <h2 className="font-condensed font-black text-[34px] text-white uppercase tracking-[-0.01em] leading-[1.05] mb-6">
+            {ed.headline}
+          </h2>
+          {ed.paras.map((para, i) => (
+            <p key={i} className="font-sans text-[15px] text-[#888] leading-[1.8] mb-5">{para}</p>
+          ))}
+
+          <div className="mt-8 pt-8 border-t border-[#2A2A2A] grid grid-cols-1 md:grid-cols-2 gap-8">
+            {ed.localities.length > 0 && (
+              <div>
+                <p className="font-condensed font-bold text-[11px] text-[#FFE600] uppercase tracking-[0.15em] mb-4">
+                  Key Locations in Rewari
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {ed.localities.map(loc => (
+                    <Link
+                      key={loc.slug}
+                      href={`/locality/${loc.slug}`}
+                      className="font-condensed font-semibold text-[12px] text-[#666] uppercase tracking-[0.05em] px-3 py-1.5 border border-[#2A2A2A] hover:border-[#FFE600] hover:text-[#FFE600] transition-colors no-underline"
+                    >
+                      {loc.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {ed.listings.length > 0 && (
+              <div>
+                <p className="font-condensed font-bold text-[11px] text-[#FFE600] uppercase tracking-[0.15em] mb-4">
+                  Browse Live Inventory
+                </p>
+                <div className="flex flex-col gap-2">
+                  {ed.listings.map(l => (
+                    <Link
+                      key={l.slug}
+                      href={`/listing/${l.slug}`}
+                      className="font-condensed font-semibold text-[13px] text-[#777] hover:text-[#FFE600] transition-colors no-underline flex items-center gap-2"
+                    >
+                      <span className="text-[#FFE600] text-[10px]">▶</span>
+                      {l.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </article>
       </section>
 
       {/* ── Related formats ── */}
