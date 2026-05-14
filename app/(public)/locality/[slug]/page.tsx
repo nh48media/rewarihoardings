@@ -35,66 +35,66 @@ type LocalityData = {
 const LOCALITY_DATA: Record<string, LocalityData> = {
   'nh-48': {
     name: 'NH-48',
-    tagline: "Rewari's highest-traffic highway corridor",
-    desc: 'NH-48 (formerly NH-8) cuts through Rewari district carrying dense commercial and passenger traffic between Delhi, Gurugram, Jaipur and beyond. The stretch near Rewari sees 20,000–35,000 vehicles per day — making it the single most impactful OOH corridor in the region. Unipoles, gantries and petrol pump panels here deliver brand impressions to both local Rewari audiences and long-haul intercity traffic.',
+    tagline: "Rewari's prime highway corridor — Delhi to Jaipur to Ahmedabad",
+    desc: 'NH-48 (formerly NH-8) is the four-lane national highway connecting Delhi to Jaipur, Udaipur and Ahmedabad — and it cuts directly through Rewari district. The stretch near Rewari handles 20,000–35,000 vehicles per day across two clear daily peaks: a heavy outbound flow between 7 and 10 AM as Rewari workers head toward Gurugram (60 km) and Delhi (110 km), and a matching return between 5 and 8 PM. HPCL refinery workers from Bawal, auto components industry commuters from the Dharuhera corridor, and NCR-bound professionals all pass this stretch daily. Unipoles, gantries and toll naka panels here deliver brand impressions simultaneously to Rewari\'s local audience and the full intercity Delhi–Ahmedabad corridor.',
     character: 'Highway',
     nearby: ['delhi-road', 'rewari-industrial-area', 'kosli-road'],
     faqs: [
-      { q: 'Which OOH formats work best on NH-48 near Rewari?', a: 'Unipoles and gantries dominate NH-48 — their height and span cut through highway visual clutter at driving speeds. Petrol pump panels and dhaba branding are also effective for dwell-time impressions. LED displays work well at the toll naka junction.' },
-      { q: 'How much traffic does NH-48 near Rewari see daily?', a: 'The NH-48 corridor through Rewari district typically sees 20,000–35,000 vehicles per day, with a healthy mix of passenger cars, commercial trucks and intercity buses. Peak traffic coincides with morning and evening commuter hours on weekdays.' },
-      { q: 'Can I target only Delhi-bound traffic on NH-48?', a: 'Yes — hoarding faces can be selected by direction. North/east-facing panels capture Delhi-bound traffic; south/west-facing panels target Jaipur and Rewari-returning traffic. Our team will recommend specific sites based on your campaign direction preference.' },
+      { q: 'Which OOH formats work best on NH-48 near Rewari?', a: 'Unipoles and gantries dominate NH-48 — their height and span cut through highway visual clutter at driving speeds. Toll naka panels near the Rewari toll plaza create a captive queue audience for both Delhi-bound and Jaipur-bound traffic. Petrol pump panels and dhaba branding add dwell-time impressions for the intercity traveller.' },
+      { q: 'When is peak traffic on NH-48 near Rewari?', a: 'There are two clear daily peaks on NH-48 at Rewari. The morning window (7–10 AM) carries heavy outbound traffic — Rewari commuters heading to Gurugram and Delhi, HPCL refinery workers toward Bawal, and long-haul freight. The evening peak (5–8 PM) reverses the flow. Weekday volume is roughly double weekend volume.' },
+      { q: 'Can I target only Delhi-bound traffic on NH-48?', a: 'Yes — hoarding faces are selected by direction. North/east-facing panels capture Delhi-bound traffic; south/west-facing panels target Jaipur, Ahmedabad and Rewari-returning traffic. Our team will recommend specific sites based on your campaign direction and audience preference.' },
     ],
   },
 
   'delhi-road': {
     name: 'Delhi Road',
-    tagline: 'Primary arterial road linking Rewari city to NH-48',
-    desc: 'Delhi Road is Rewari city\'s main commercial spine — the arterial connection between the city centre and NH-48. It carries the bulk of inter-city commuter traffic alongside a dense retail strip of shops, showrooms and services. Hoardings, gantries and pole kiosks along Delhi Road reach a broad audience of Rewari residents, daily commuters and NH-48 travellers entering the city.',
+    tagline: 'Primary arterial road linking Rewari city to NH-48 and the NCR',
+    desc: 'Delhi Road is Rewari city\'s main commercial artery — the direct connection between the city centre and NH-48, pointing toward Gurugram (60 km) and Delhi (110 km). It carries the city\'s heaviest daily commuter volume, with two defined peak windows: 7–10 AM outbound as Rewari professionals head to NCR workplaces, and 5–8 PM inbound on the return. The road runs through a dense retail strip of shops, showrooms, coaching institutes and service businesses. A gantry or large-format hoarding on Delhi Road reaches Rewari\'s most aspirational demographic — salaried professionals with NCR incomes who live in Rewari and make purchasing decisions here.',
     character: 'Arterial Road',
     nearby: ['nh-48', 'gurudwara-chowk', 'circular-road'],
     faqs: [
-      { q: 'What is the reach of a hoarding on Delhi Road, Rewari?', a: 'A well-positioned hoarding on Delhi Road reaches an estimated 15,000–25,000 individuals daily — a mix of Rewari city residents, commuters from nearby towns and NH-48 travellers diverting into the city.' },
-      { q: 'Which formats are most common on Delhi Road?', a: 'Unipoles and standard hoardings are the dominant formats on Delhi Road. Pole kiosks run at close intervals for frequency advertising, while auto and e-rickshaw branding adds mobility coverage through the same corridor.' },
-      { q: 'Is Delhi Road good for local retail advertising?', a: 'Absolutely. Delhi Road\'s retail strip means high footfall in addition to vehicular traffic. Flex banners, rooftop hoardings and LED displays near key junctions along this road are well-suited to local retail, real estate and service businesses targeting Rewari city shoppers.' },
+      { q: 'What is the reach of a hoarding on Delhi Road, Rewari?', a: 'A well-positioned hoarding on Delhi Road reaches an estimated 15,000–25,000 individuals daily. The audience skews heavily toward working-age Rewari residents who commute to Gurugram and Delhi — one of the city\'s most aspirational demographics for real estate, automotive, banking and premium consumer brands.' },
+      { q: 'What are the peak hours on Delhi Road, Rewari?', a: 'Delhi Road sees its heaviest traffic during the morning commute (7–10 AM) and the evening return (5–8 PM). Weekend afternoon traffic is strong due to the retail strip. A hoarding here captures the same commuter audience six to ten times per week throughout a campaign — a very high-frequency format for the NCR commuter demographic.' },
+      { q: 'Is Delhi Road good for local retail advertising?', a: 'Absolutely. Delhi Road\'s retail strip means high footfall in addition to vehicular traffic. Flex banners, rooftop hoardings and LED displays near key junctions along this road are well-suited to local retail, real estate and service businesses targeting both Rewari city shoppers and the large NCR-commuter resident population.' },
     ],
   },
 
   'sadar-bazar': {
     name: 'Sadar Bazar',
-    tagline: "Rewari's busiest commercial market district",
-    desc: 'Sadar Bazar is the historic commercial heart of Rewari — a dense, high-footfall market area packed with wholesale and retail trade. The area draws shoppers and traders from across Rewari district daily. OOH advertising here targets an affluent, purchase-ready audience at close range: rooftop hoardings, LED displays and look walkers are especially effective in this pedestrian-heavy zone.',
+    tagline: "Rewari's historic commercial heart — grain, cloth, hardware and retail",
+    desc: 'Sadar Bazar is the traditional commercial heart of Rewari — a dense, high-footfall market packed with grain dealers, cloth merchants, hardware traders, and retail shops that have served the district for generations. Traders and shoppers from across Rewari district and surrounding villages converge here daily. OOH advertising here targets a purchase-ready audience at close range: rooftop hoardings, LED displays and look walkers are especially effective in this pedestrian-heavy zone where dwell time runs well above city-road averages.',
     character: 'Commercial Market',
     nearby: ['gurudwara-chowk', 'new-grain-market', 'rewari-bus-stand'],
     faqs: [
-      { q: 'What OOH formats work best in Sadar Bazar?', a: 'Rooftop hoardings, LED displays and pole kiosks are top performers in Sadar Bazar — the close-range, pedestrian-heavy environment favours formats visible from shorter distances. Pamphlet distribution and flex banners also see strong response for event and sale-specific campaigns.' },
-      { q: 'Who is the audience in Sadar Bazar?', a: 'Sadar Bazar attracts a mixed audience of wholesale buyers, retail shoppers, local residents and traders from across Rewari district. Daily footfall is among the highest in the city, with concentration in the 25–55 age bracket — an active purchasing demographic.' },
-      { q: 'Is Sadar Bazar good for FMCG or consumer brand campaigns?', a: 'Yes — FMCG, apparel, electronics and local services all perform well here. The point-of-purchase proximity means an OOH impression in Sadar Bazar is closely linked to an immediate buying decision, making it valuable for product launches and seasonal promotions.' },
+      { q: 'What OOH formats work best in Sadar Bazar?', a: 'Rooftop hoardings, LED displays and pole kiosks are top performers in Sadar Bazar — the close-range, pedestrian-heavy environment favours formats visible from shorter distances. Look walkers during peak market hours are effective for new product launches. Pamphlet distribution and flex banners see strong response for event and sale campaigns.' },
+      { q: 'Who is the audience in Sadar Bazar?', a: 'Sadar Bazar draws a mixed audience: wholesale buyers, retail shoppers, grain traders, cloth merchants, and village visitors from across Rewari district. Daily footfall is among the highest in the city, concentrated in the 25–55 age bracket — an active purchasing demographic with strong local market familiarity.' },
+      { q: 'Is Sadar Bazar good for FMCG or consumer brand campaigns?', a: 'Yes — FMCG, apparel, electronics, kitchenware and local services all perform well here. The point-of-purchase proximity means an OOH impression in Sadar Bazar sits close to an immediate buying decision, making it particularly valuable for product launches, festive promotions and seasonal sale campaigns.' },
     ],
   },
 
   'rewari-bus-stand': {
     name: 'Rewari Bus Stand',
-    tagline: "High-dwell transit hub — city's most captive audience",
-    desc: 'Rewari Bus Stand (HRTC) is a major intercity transit node connecting Rewari to Delhi, Gurugram, Dharuhera, Bawal, Narnaul and beyond. Hundreds of buses and thousands of daily passengers pass through — creating a high-dwell, captive audience environment. Bus shelter panels, LED displays, auto stand branding and pamphlet distribution are all highly effective here.',
+    tagline: "High-dwell HRTC transit hub — city's most captive audience",
+    desc: 'Rewari Bus Stand (HRTC) is the city\'s primary intercity transit node, handling routes to Delhi, Gurugram, Bhiwani, Narnaul, Bawal, Jhajjar, and local intra-district services. An estimated 10,000–15,000 daily passengers and bystanders pass through — farmers from surrounding villages, students heading to colleges in Rewari and Gurugram, daily commuters, and rural visitors running city errands. Two high-density windows define the day: the 7–10 AM HRTC departure rush and the 5–8 PM return peak. Bus shelter panels, LED displays and auto stand branding at this junction deliver captive impressions to a genuinely cross-district audience.',
     character: 'Transit Hub',
     nearby: ['sadar-bazar', 'rewari-railway-station', 'circular-road'],
     faqs: [
-      { q: 'How many people pass through Rewari Bus Stand daily?', a: 'Rewari Bus Stand handles thousands of passengers daily across HRTC intercity routes to Delhi, Gurugram, Dharuhera, Bawal, Narnaul and surrounding towns. Footfall peaks during morning departure (6–10 AM) and evening return (5–9 PM) windows.' },
-      { q: 'Which formats give the best ROI near the bus stand?', a: 'Bus shelter panels offer captive dwell-time impressions. LED displays near the entry give high-visibility impact. Auto and e-rickshaw branding at the adjacent stand creates mobile reach throughout the city. For hyperlocal response, pamphlet distribution at the exit sees strong pickup.' },
-      { q: 'Can I run a campaign targeting intercity travellers at the bus stand?', a: 'Yes — the bus stand audience skews toward intercity travellers from smaller towns around Rewari, making it ideal for brands targeting a wider district audience beyond Rewari city itself. Entry-point panels and shelter advertising capture these audiences at dwell time.' },
+      { q: 'How many people pass through Rewari Bus Stand daily?', a: 'Rewari Bus Stand handles an estimated 10,000–15,000 daily passengers across HRTC routes to Delhi, Gurugram, Bhiwani, Narnaul, Bawal and local intra-district services. Footfall peaks sharply during the 7–10 AM departure rush and the 5–8 PM evening return — the two best windows for OOH impression density.' },
+      { q: 'Which formats give the best ROI near the bus stand?', a: 'Bus shelter panels offer captive dwell-time impressions to waiting passengers. The LED display near the entry gives high-visibility impact for both passengers and passing road traffic. Auto and e-rickshaw branding at the adjacent stand creates mobile reach throughout the city. Pamphlet distribution at the exit sees strong pickup during the morning rush.' },
+      { q: 'Can I run a campaign targeting intercity travellers at the bus stand?', a: 'Yes — the bus stand audience spans both Rewari city residents and visitors from Narnaul, Bawal, Bhiwani and surrounding villages, making it ideal for brands targeting a district-wide audience. LED display slots and shelter panels capture this audience during peak dwell time, when attention to advertising is highest.' },
     ],
   },
 
   'rewari-railway-station': {
     name: 'Rewari Railway Station',
-    tagline: 'One of Haryana\'s busiest rail junctions',
-    desc: 'Rewari Junction is a major railway junction on the Delhi–Rewari–Bhatinda and Delhi–Rewari–Alwar routes, handling significant passenger volume daily. The station forecourt, platforms and surrounding approach roads create a prime OOH zone. Railway station panels, approach road hoardings and auto stand branding at the taxi/rickshaw area all reach a diverse, district-wide audience.',
+    tagline: 'Rewari Junction — major Haryana rail interchange on Delhi–Alwar and Delhi–Bhatinda routes',
+    desc: 'Rewari Junction is one of Haryana\'s most strategically positioned railway junctions — the intersection of multiple major routes including Delhi–Alwar, Delhi–Bhatinda, and Rewari–Rohtak. Daily trains carry commuters to Delhi and Gurugram, workers heading toward the HPCL refinery at Bawal, students, agri traders, and intercity travellers from across the district. The station forecourt, platform approaches and surrounding roads create a concentrated OOH zone. Approach road hoardings, auto and e-rickshaw branding at the station taxi stand, and platform panels all reach a genuinely district-wide audience with high average dwell time.',
     character: 'Railway Junction',
     nearby: ['rewari-bus-stand', 'circular-road', 'gurudwara-chowk'],
     faqs: [
-      { q: 'Is railway station advertising in Rewari high-impact?', a: 'Rewari Junction is one of the busier stations in Haryana — it sits on multiple rail routes including Delhi–Alwar, Delhi–Bhatinda and Rewari–Rohtak lines. Station platforms and forecourt panels deliver high-dwell impressions to a diverse audience of daily commuters, intercity travellers and district visitors.' },
-      { q: 'What formats are available near Rewari Railway Station?', a: 'Dedicated railway station panel advertising (platforms and concourse), hoardings and unipoles on the approach road, auto and e-rickshaw branding at the station taxi stand, and pamphlet distribution at the exit gate are all available. Contact us for current railway authority-approved panel availability.' },
-      { q: 'What is the audience profile at Rewari Railway Station?', a: 'The station audience is a broad cross-section of Rewari district — daily commuters to Delhi and Gurugram, students, traders travelling to regional markets, and rural visitors from surrounding villages. It is one of the few OOH locations in Rewari with genuinely district-wide audience reach.' },
+      { q: 'Is railway station advertising in Rewari high-impact?', a: 'Rewari Junction is one of the more significant stations in Haryana — it sits at the intersection of the Delhi–Alwar, Delhi–Bhatinda and Rewari–Rohtak rail routes. Platform and forecourt panels deliver high-dwell impressions to daily commuters, HPCL refinery workers, students and intercity travellers from across the district.' },
+      { q: 'What formats are available near Rewari Railway Station?', a: 'Hoardings and unipoles on the station approach road capture inbound traffic. Auto and e-rickshaw branding at the station taxi stand creates mobile reach through the city. Platform and concourse panels (subject to railway authority permissions) reach waiting passengers directly. Contact us for current inventory availability.' },
+      { q: 'What is the audience profile at Rewari Railway Station?', a: 'The station audience is a broad cross-section of Rewari district — daily commuters to Delhi and Gurugram, workers traveling to the HPCL refinery and industrial units at Bawal, students, agri traders visiting city markets, and rural visitors from surrounding villages. Rewari Junction is one of the few OOH locations in the city that delivers genuinely district-wide audience reach at a single placement.' },
     ],
   },
 
@@ -139,14 +139,14 @@ const LOCALITY_DATA: Record<string, LocalityData> = {
 
   'new-grain-market': {
     name: 'New Grain Market',
-    tagline: 'Rewari\'s wholesale agricultural trading hub',
-    desc: 'New Grain Market (Nayi Anaj Mandi) is a major wholesale trading centre for agricultural commodities serving Rewari and the surrounding rural district. Thousands of farmers, traders and transporters visit daily during harvest and trading seasons. Market gate branding, hoarding and flex banner advertising here reaches a large rural and semi-rural audience with strong purchasing power for agri-inputs, vehicles, and rural services.',
+    tagline: 'Rewari\'s wholesale agricultural trading hub — wheat, mustard and seasonal crops',
+    desc: 'New Grain Market (Nayi Anaj Mandi) is the primary wholesale trading centre for agricultural commodities in Rewari district. Rewari sits deep in Haryana\'s wheat and mustard belt — farmers from Rewari, Mahendragarh and Bhiwani districts bring their Rabi harvest (wheat, mustard) in March–April and Kharif crops in September–October. Thousands of farmers, commission agents, traders and transporters converge here during trading seasons. Market gate branding and hoarding advertising reaches a large rural audience with strong purchasing power for agri-inputs, tractors, two-wheelers and rural financial services.',
     character: 'Agricultural Market',
     nearby: ['sadar-bazar', 'gurudwara-chowk', 'majra-chowk'],
     faqs: [
-      { q: 'Who visits the New Grain Market in Rewari?', a: 'New Grain Market draws farmers from across Rewari, Mahendragarh, and adjoining districts bringing crops to sell — predominantly wheat, mustard and vegetables. The visitor base also includes wholesale traders, commission agents, transporters and rural shopkeepers, representing a substantial rural district audience.' },
-      { q: 'What OOH formats are most effective at New Grain Market?', a: 'Market gate branding is the signature format — the branded archway at the entrance sees every visitor. Hoardings within and around the market compound, flex banners during peak arrival seasons (Rabi/Kharif harvest) and pamphlet distribution at the weighbridge queues are all effective.' },
-      { q: 'Is New Grain Market a good location for agri-input or farm equipment brands?', a: 'It is one of the best locations in the district for those categories. The audience is exactly the rural farmer and trader base that purchases seeds, fertilisers, tractors and farm equipment. A presence here during sowing or harvest season delivers direct, intent-matched impressions.' },
+      { q: 'Who visits the New Grain Market in Rewari?', a: 'New Grain Market draws farmers from across Rewari, Mahendragarh and Bhiwani districts bringing wheat, mustard and seasonal vegetables to sell. The visitor base also includes commission agents, wholesale traders, transporters and rural shopkeepers — a substantial rural district audience with high purchasing power for their category, concentrated at a single location.' },
+      { q: 'What OOH formats are most effective at New Grain Market?', a: 'Market gate branding is the signature format — the branded archway at the entrance sees every visitor. Hoardings within and around the market compound deliver sustained exposure. Flex banners during peak Rabi harvest (March–April) and Kharif arrival (September–October) capture the highest footfall windows. Pamphlet distribution at weighbridge queues sees strong pickup.' },
+      { q: 'Is New Grain Market a good location for agri-input or farm equipment brands?', a: 'It is one of the best locations in the district for those categories. The audience is exactly the wheat and mustard farming community that purchases seeds, fertilisers, pesticides, tractors and farm equipment. A campaign presence here during Rabi sowing (October–November) or Rabi harvest (March–April) delivers direct, intent-matched impressions to the core rural buyer.' },
     ],
   },
 
@@ -165,14 +165,14 @@ const LOCALITY_DATA: Record<string, LocalityData> = {
 
   'jat-college-road': {
     name: 'Jat College Road',
-    tagline: 'Education corridor — student and faculty audience',
-    desc: 'Jat College Road is home to Jat College (one of Rewari\'s oldest educational institutions), along with coaching institutes, student hostels and supporting services. The road sees heavy footfall from students, parents during admissions, and faculty — creating a distinct demographic profile. School and college gate branding, hoardings near the college entrance and pole kiosks along the road are well-targeted formats here.',
+    tagline: 'Education corridor — Jat College, engineering institutes and student catchment',
+    desc: 'Jat College Road anchors Rewari\'s education belt — Jat College (one of the district\'s oldest degree colleges) is joined by engineering colleges, polytechnics, coaching institutes, student hostels and supporting services along this corridor. The road sees heavy daily footfall from students, parents during admission season, and faculty — creating a concentrated 17–28 demographic. College gate branding, hoardings near college entrances and pole kiosks along the road reach this audience at close range and high frequency throughout the academic year.',
     character: 'Educational Corridor',
     nearby: ['subhash-nagar', 'model-town', 'dharan-road'],
     faqs: [
-      { q: 'Is Jat College Road good for education-sector advertising?', a: 'It is one of the best locations in Rewari for education advertising — coaching institutes, engineering colleges, professional courses and skill development programmes all find a receptive audience here. The student and parent demographic is actively seeking educational options, particularly during board exam results and admission seasons (March–June).' },
-      { q: 'What formats are recommended on Jat College Road?', a: 'College gate branding is the flagship format — it reaches all students and parents entering the premises daily. Hoardings on the approach road, flex banners near hostel areas and pamphlet distribution outside the college gate after hours are all effective. Pole kiosks along the road provide high-frequency supplementary exposure.' },
-      { q: 'Beyond education, what other brands advertise on Jat College Road?', a: 'Food delivery, smartphone brands, banking and credit products, gym and fitness services, and healthcare brands targeting the 17–28 age group all perform well on this corridor. The student population represents a fast-moving consumer base with brand preference still being formed.' },
+      { q: 'Is Jat College Road good for education-sector advertising?', a: 'It is one of the best locations in Rewari for education advertising — Jat College, the engineering colleges and the coaching institute cluster all draw students and parents actively seeking educational options. The critical admission windows are March–June (after board results) and July–August (engineering admissions). Campaigns timed to these windows see strong response.' },
+      { q: 'What formats are recommended on Jat College Road?', a: 'College gate branding is the flagship format — it reaches all students and parents entering the premises daily. Hoardings on the approach road and flex banners near hostel areas deliver sustained awareness. Pamphlet distribution outside the college gate after lecture hours sees strong pickup from the student audience. Pole kiosks along the road add frequency.' },
+      { q: 'Beyond education, what other brands advertise on Jat College Road?', a: 'Food delivery, smartphone brands, banking and credit products, gym and fitness services, and healthcare brands targeting the 17–28 age group all perform well here. The engineering college student demographic is a fast-moving consumer base — mobile-first, early adopters — with brand preferences still forming, making this a high-value corridor for consumer brand launches.' },
     ],
   },
 
@@ -204,14 +204,14 @@ const LOCALITY_DATA: Record<string, LocalityData> = {
 
   'rewari-industrial-area': {
     name: 'Rewari Industrial Area',
-    tagline: 'B2B and industrial corridor — manufacturer and worker audience',
-    desc: 'Rewari has a significant industrial area with manufacturing units, warehouses and ancillary services — part of the larger IMT Rewari/Dharuhera-Rewari industrial corridor. Advertising here targets factory workers, B2B procurement managers, logistics operators and industrial service providers. Wall paintings, hoardings at industrial entry gates and flex banners for worker-facing brands are all relevant formats.',
+    tagline: 'Auto components and manufacturing belt — part of the Dharuhera-Rewari-Bawal industrial corridor',
+    desc: 'Rewari\'s industrial corridor sits between two major manufacturing hubs — the Dharuhera industrial township to the north and IMT Bawal to the south — forming part of one of North India\'s most active auto components and engineering goods belts. The area houses auto parts manufacturers, engineering goods units, light manufacturing facilities and large warehousing operations. HPCL\'s refinery at Bawal generates significant daily worker commute traffic through this corridor. Advertising here targets factory workers (a large, high-frequency daily commuter base), supervisory and managerial staff, B2B procurement managers, and the logistics operators who move goods along the NH-48 industrial belt.',
     character: 'Industrial',
     nearby: ['nh-48', 'dharan-road', 'kosli-road'],
     faqs: [
-      { q: 'Who is the audience in Rewari Industrial Area?', a: 'The industrial area audience is primarily factory workers (a large, dense daily commuter base), supervisory and managerial staff, B2B buyers and procurement managers, and logistics/transport operators. It is one of the few OOH locations in Rewari with meaningful B2B audience density.' },
-      { q: 'What brands advertise in industrial areas?', a: 'Worker-facing consumer brands (mobile phones, two-wheelers, FMCG, financial services), B2B industrial suppliers (tools, safety equipment, lubricants), staffing and recruitment services, and health insurance products all perform well in industrial corridors. The daily commuter pattern means repeated exposure over a campaign period.' },
-      { q: 'Which OOH formats are recommended for the Rewari Industrial Area?', a: 'Wall paintings at factory boundary walls give long-term exposure. Hoardings at the industrial area entry roads capture all incoming traffic. Gate branding at major factory entries reaches workers at point of arrival. Flex banners and pamphlets work for event-based or recruitment campaigns.' },
+      { q: 'Who is the audience in Rewari Industrial Area?', a: 'The industrial corridor audience is primarily factory and warehouse workers (several thousand daily commuters), supervisory and managerial staff at auto components and engineering units, B2B procurement and logistics managers, and HPCL refinery workers commuting through toward Bawal. It is one of the few OOH locations in Rewari with meaningful B2B audience density alongside a large blue-collar worker base.' },
+      { q: 'What brands advertise in Rewari\'s industrial corridors?', a: 'Worker-facing consumer brands (two-wheelers, mobile phones, FMCG, PF-linked financial products), B2B industrial suppliers (tools, safety equipment, lubricants, consumables), staffing and recruitment services, and group health insurance products all perform well here. The daily commuter pattern creates repeated weekly exposure that builds strong brand recall over a campaign.' },
+      { q: 'Which OOH formats are recommended for the Rewari Industrial Area?', a: 'Wall paintings at factory boundary walls give the longest-duration exposure at the lowest recurring cost. Hoardings at the industrial entry roads capture all inbound commuter and logistics traffic. Gate branding at major factory entries reaches workers at point of arrival. Flex banners near the main gate work for recruitment drives and shift-specific promotional campaigns.' },
     ],
   },
 
