@@ -55,3 +55,16 @@ See schema in /docs/schema.sql
 - OOH format taxonomy: 40 formats across 7 categories
 - Admin panel spec: 5 modules (dashboard, listings, leads, photos, settings)
 - Supabase schema SQL: listings + rh_leads + rh_settings + RLS policies
+## Rewari Local Context (for SEO content generation)
+- Population: ~1.5 lakh (Rewari city), district ~9 lakh
+- NH-48 connects Delhi–Jaipur–Ahmedabad, passes through Rewari
+- Major commercial areas: Sadar Bazar, Delhi Road, New Grain Market
+- Key landmarks: Rewari Junction (major railway junction), 
+  Rewari Bus Stand (HRTC), Rewari Industrial Area (IMT Bawal nearby)
+- Major employers: HPCL refinery (Bawal), auto components industry,
+  agriculture (wheat belt), government offices
+- Audience mix: Daily commuters to Delhi/Gurugram, local traders,
+  farmers, students (Jat College, engineering colleges), 
+  industrial workers
+- Competing OOH cities: Dharuhera, Bawal, Narnaul
+- Peak traffic: Morning 7-10am, Evening 5-8pm on Delhi Road and NH-48
