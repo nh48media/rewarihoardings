@@ -7,17 +7,19 @@ import { createClient } from '@/lib/supabase/client'
 interface SidebarProps {
   listingCount: number
   newLeadCount: number
+  blogCount: number
 }
 
 const navLinks = [
   { href: '/admin',          label: 'Dashboard', exact: true },
   { href: '/admin/listings', label: 'Listings',  exact: false },
+  { href: '/admin/blog',     label: 'Blog',      exact: false },
   { href: '/admin/leads',    label: 'Leads',     exact: false, accent: true },
   { href: '/admin/photos',   label: 'Photos',    exact: false },
   { href: '/admin/settings', label: 'Settings',  exact: false },
 ]
 
-export default function Sidebar({ listingCount, newLeadCount }: SidebarProps) {
+export default function Sidebar({ listingCount, newLeadCount, blogCount }: SidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
 
@@ -56,6 +58,8 @@ export default function Sidebar({ listingCount, newLeadCount }: SidebarProps) {
             ? listingCount
             : link.href === '/admin/leads'
             ? newLeadCount
+            : link.href === '/admin/blog'
+            ? blogCount
             : 0
 
           return (

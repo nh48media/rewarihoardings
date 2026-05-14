@@ -1,11 +1,24 @@
+import type { Metadata } from 'next'
 import { createClient } from '@/lib/supabase/server'
 import type { ListingRow } from '@/types/database'
 import Link from 'next/link'
 import Image from 'next/image'
 import QuoteForm from '@/components/QuoteForm'
 import WhatsAppFAB from '@/components/WhatsAppFAB'
+import SiteNav from '@/components/SiteNav'
+import SiteFooter from '@/components/SiteFooter'
+import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema'
 
 export const revalidate = 3600
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Rewari Hoardings — Rewari's #1 OOH Advertising Marketplace",
+  },
+  description:
+    'Find and book hoardings, unipoles, gantries, LED displays and outdoor advertising in Rewari, Haryana. Browse 15+ prime NH-48 corridor locations.',
+  alternates: { canonical: 'https://rewarihoardings.com' },
+}
 
 const WA = '918168740234'
 
@@ -122,27 +135,8 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* ── NAV ── */}
-      <nav className="sticky top-0 z-50 bg-[#0A0A0A] border-b border-[#2A2A2A] flex items-center justify-between px-10 h-16">
-        <Link href="/" className="flex items-center gap-2.5 no-underline">
-          <div className="w-9 h-9 bg-[#FFE600] flex items-center justify-center font-condensed font-black text-lg text-[#0A0A0A] leading-none">
-            RH
-          </div>
-          <span className="font-condensed font-bold text-[17px] text-white uppercase tracking-[0.02em]">
-            Rewari<span className="text-[#FFE600]">Hoardings</span>
-          </span>
-        </Link>
-        <ul className="hidden md:flex items-center gap-8 list-none m-0 p-0">
-          <li><Link href="/city/rewari" className="font-condensed font-medium text-[15px] text-[#aaa] hover:text-white uppercase tracking-[0.06em] transition-colors no-underline">Rewari</Link></li>
-          <li><Link href="/type/unipole" className="font-condensed font-medium text-[15px] text-[#aaa] hover:text-white uppercase tracking-[0.06em] transition-colors no-underline">Types</Link></li>
-          <li><Link href="/blog" className="font-condensed font-medium text-[15px] text-[#aaa] hover:text-white uppercase tracking-[0.06em] transition-colors no-underline">Blog</Link></li>
-          <li>
-            <Link href="/get-quote" className="font-condensed font-bold text-[14px] text-[#0A0A0A] bg-[#FFE600] px-4 py-2 uppercase tracking-[0.06em] hover:bg-yellow-300 transition-colors no-underline">
-              Get Quote
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <LocalBusinessSchema />
+      <SiteNav />
 
       {/* ── HERO ── */}
       <section className="relative bg-[#0A0A0A] overflow-hidden px-10 py-20 border-b-[3px] border-[#FFE600]">
@@ -458,64 +452,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* ── FOOTER ── */}
-      <footer className="bg-[#0A0A0A] border-t-[3px] border-[#FFE600] px-10 pt-14 pb-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-[260px_1fr_1fr_1fr] gap-10 pb-12 border-b border-[#2A2A2A] mb-8">
-            <div>
-              <div className="flex items-center gap-2.5 mb-4">
-                <div className="w-9 h-9 bg-[#FFE600] flex items-center justify-center font-condensed font-black text-lg text-[#0A0A0A]">RH</div>
-                <span className="font-condensed font-bold text-[17px] text-white uppercase tracking-[0.02em]">Rewari<span className="text-[#FFE600]">Hoardings</span></span>
-              </div>
-              <p className="font-sans text-[14px] text-[#555] leading-[1.65] mb-5">
-                Rewari's dedicated outdoor advertising marketplace. Find, compare and book hoardings, unipoles, gantries and more across the NH-48 corridor.
-              </p>
-              <a href={waUrl("Hi, I'd like to enquire about hoarding advertising in Rewari.")} target="_blank" rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#25D366] text-white font-condensed font-bold text-[13px] uppercase tracking-[0.08em] px-4 py-2.5 hover:bg-[#1ebe5a] transition-colors no-underline">
-                <WAIcon size={16} />
-                +91 81687 40234
-              </a>
-            </div>
-            <div>
-              <p className="font-condensed font-bold text-[12px] text-[#FFE600] uppercase tracking-[0.15em] mb-4">Inventory</p>
-              <ul className="space-y-2 list-none m-0 p-0">
-                {[['All Rewari Locations', '/city/rewari'], ['Unipoles', '/type/unipole'], ['Gantries', '/type/gantry'], ['Hoardings', '/type/hoarding'], ['LED Displays', '/type/led-display'], ['Bus Shelters', '/type/bus-shelter']].map(([label, href]) => (
-                  <li key={href}><Link href={href} className="font-condensed font-medium text-[15px] text-[#555] uppercase tracking-[0.04em] hover:text-white transition-colors no-underline">{label}</Link></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="font-condensed font-bold text-[12px] text-[#FFE600] uppercase tracking-[0.15em] mb-4">Locations</p>
-              <ul className="space-y-2 list-none m-0 p-0">
-                {(localities.length > 0 ? localities.slice(0, 6) : ['NH-48 Entry Point', 'Delhi Road', 'Sadar Bazar', 'Bus Stand', 'Subhash Nagar', 'Model Town']).map(loc => (
-                  <li key={loc}><Link href={`/locality/${slugify(loc)}`} className="font-condensed font-medium text-[15px] text-[#555] uppercase tracking-[0.04em] hover:text-white transition-colors no-underline">{loc}</Link></li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <p className="font-condensed font-bold text-[12px] text-[#FFE600] uppercase tracking-[0.15em] mb-4">Company</p>
-              <ul className="space-y-2 list-none m-0 p-0">
-                {[['Get Quote', '/get-quote'], ['Blog', '/blog'], ['All Listings', '/city/rewari'], ['Admin Login', '/admin']].map(([label, href]) => (
-                  <li key={href}><Link href={href} className="font-condensed font-medium text-[15px] text-[#555] uppercase tracking-[0.04em] hover:text-white transition-colors no-underline">{label}</Link></li>
-                ))}
-              </ul>
-              <div className="mt-6">
-                <p className="font-condensed font-bold text-[12px] text-[#FFE600] uppercase tracking-[0.15em] mb-2">Managed by</p>
-                <a href="https://nh48media.com" className="font-condensed font-semibold text-[14px] text-[#444] uppercase tracking-[0.05em] hover:text-white transition-colors no-underline">
-                  NH48 Media →
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-            <p className="font-condensed text-[13px] text-[#3a3a3a] uppercase tracking-[0.06em]">
-              © 2025 RewarHoardings.com · Managed by{' '}
-              <a href="https://nh48media.com" className="text-[#FFE600] no-underline hover:underline">NH48 Media</a>, Rewari
-            </p>
-            <p className="font-condensed text-[13px] text-[#3a3a3a] uppercase tracking-[0.06em]">Rewari, Haryana 123401</p>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter localities={localities} />
 
       <WhatsAppFAB />
     </>

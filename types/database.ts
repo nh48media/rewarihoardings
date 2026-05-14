@@ -78,6 +78,21 @@ export type RhSettingRow = {
   updated_at: string
 }
 
+export type RhBlogRow = {
+  id:               string
+  slug:             string
+  title:            string
+  excerpt:          string | null
+  content:          string
+  cover_image:      string | null
+  published_at:     string | null
+  is_published:     boolean
+  meta_title:       string | null
+  meta_description: string | null
+  created_at:       string
+  updated_at:       string
+}
+
 // ── Database schema (supabase-js v2 format) ───────────────────────────────────
 
 export type Database = {
@@ -101,6 +116,13 @@ export type Database = {
         Row:    RhSettingRow
         Insert: Omit<RhSettingRow, 'updated_at'> & Partial<Pick<RhSettingRow, 'updated_at'>>
         Update: Partial<RhSettingRow>
+        Relationships: []
+      }
+      rh_blog: {
+        Row:    RhBlogRow
+        Insert: Omit<RhBlogRow, 'id' | 'created_at' | 'updated_at'> &
+                Partial<Pick<RhBlogRow, 'id' | 'created_at' | 'updated_at'>>
+        Update: Partial<Omit<RhBlogRow, 'id'>>
         Relationships: []
       }
     }

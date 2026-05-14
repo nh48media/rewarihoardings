@@ -40,3 +40,91 @@ body {
   from { opacity: 0; transform: scale(0.5); }
   to   { opacity: 1; transform: scale(1); }
 }
+
+/* ── Blog markdown prose ─────────────────────────────────────────────────── */
+.prose-blog {
+  color: #aaa;
+  font-size: 16px;
+  line-height: 1.75;
+  font-family: var(--font-sans);
+}
+.prose-blog h1,.prose-blog h2,.prose-blog h3,.prose-blog h4 {
+  font-family: var(--font-condensed);
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
+  line-height: 1.15;
+}
+.prose-blog h1 { font-size: clamp(26px,3.5vw,36px); }
+.prose-blog h2 { font-size: clamp(20px,2.5vw,28px); }
+.prose-blog h3 { font-size: clamp(17px,2vw,22px); }
+.prose-blog h4 { font-size: 18px; }
+.prose-blog p  { margin-bottom: 1.4em; }
+.prose-blog a  { color: #FFE600; text-decoration: underline; }
+.prose-blog a:hover { color: #fff; }
+.prose-blog strong { color: #fff; font-weight: 700; }
+.prose-blog em { color: #ccc; font-style: italic; }
+.prose-blog ul,.prose-blog ol { padding-left: 1.6em; margin-bottom: 1.4em; }
+.prose-blog ul { list-style-type: disc; }
+.prose-blog ol { list-style-type: decimal; }
+.prose-blog li { margin-bottom: 0.4em; }
+.prose-blog blockquote {
+  border-left: 3px solid #FFE600;
+  padding-left: 1.2em;
+  margin-left: 0;
+  color: #777;
+  font-style: italic;
+}
+.prose-blog code {
+  background: #1a1a1a;
+  color: #FFE600;
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+  font-size: 0.875em;
+  font-family: monospace;
+}
+.prose-blog pre {
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 1.2em;
+  overflow-x: auto;
+  margin-bottom: 1.4em;
+}
+.prose-blog pre code { background: none; padding: 0; color: #ccc; }
+.prose-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.4em;
+  font-size: 0.9em;
+}
+.prose-blog th {
+  background: #1a1a1a;
+  color: #fff;
+  font-family: var(--font-condensed);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.6em 1em;
+  border: 1px solid #2a2a2a;
+  text-align: left;
+}
+.prose-blog td {
+  padding: 0.6em 1em;
+  border: 1px solid #1e1e1e;
+}
+.prose-blog tr:nth-child(even) td { background: #111; }
+.prose-blog hr {
+  border: none;
+  border-top: 1px solid #2a2a2a;
+  margin: 2.5em 0;
+}
+.prose-blog img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 1.5em 0;
+}

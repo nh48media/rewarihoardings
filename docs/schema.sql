@@ -135,6 +135,29 @@ insert into public.rh_settings (key, value) values
 
 
 -- ─────────────────────────────────────────
+--  TABLE: rh_blog
+-- ─────────────────────────────────────────
+create table public.rh_blog (
+  id               uuid primary key default gen_random_uuid(),
+  slug             text not null unique,
+  title            text not null,
+  excerpt          text,
+  content          text not null default '',
+  cover_image      text,
+  published_at     timestamptz default now(),
+  is_published     boolean default false,
+  meta_title       text,
+  meta_description text,
+  created_at       timestamptz default now(),
+  updated_at       timestamptz default now()
+);
+
+create index rh_blog_slug_idx         on public.rh_blog(slug);
+create index rh_blog_published_idx    on public.rh_blog(is_published);
+create index rh_blog_published_at_idx on public.rh_blog(published_at desc);
+
+
+-- ─────────────────────────────────────────
 --  AUTO-UPDATE updated_at TRIGGER
 -- ─────────────────────────────────────────
 create or replace function public.update_updated_at()
@@ -155,6 +178,10 @@ create trigger rh_leads_updated_at
 
 create trigger rh_settings_updated_at
   before update on public.rh_settings
+  for each row execute function public.update_updated_at();
+
+create trigger rh_blog_updated_at
+  before update on public.rh_blog
   for each row execute function public.update_updated_at();
 
 
@@ -193,6 +220,18 @@ create policy "Public read settings"
 -- rh_settings: authenticated (admin) full access
 create policy "Admin full access settings"
   on public.rh_settings for all
+  using (auth.role() = 'authenticated');
+
+-- rh_blog: public can read published posts
+alter table public.rh_blog enable row level security;
+
+create policy "Public read published blog posts"
+  on public.rh_blog for select
+  using (is_published = true);
+
+-- rh_blog: authenticated (admin) full access
+create policy "Admin full access blog"
+  on public.rh_blog for all
   using (auth.role() = 'authenticated');
 
 
