@@ -8,6 +8,7 @@ import WhatsAppFAB from '@/components/WhatsAppFAB'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import LocalBusinessSchema from '@/components/seo/LocalBusinessSchema'
+import WebSiteSchema from '@/components/seo/WebSiteSchema'
 
 export const revalidate = 3600
 
@@ -136,6 +137,7 @@ export default async function HomePage() {
   return (
     <>
       <LocalBusinessSchema />
+      <WebSiteSchema />
       <SiteNav />
 
       {/* ── HERO ── */}

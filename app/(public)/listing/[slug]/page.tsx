@@ -198,8 +198,6 @@ export default async function ListingPage({ params }: Props) {
         locality={l.locality}
         description={l.meta_description ?? `${fmtLabel(l.type)} outdoor advertising in ${l.locality}, Rewari, Haryana.`}
         photos={allPhotos}
-        availability={l.availability}
-        landmark={l.landmark}
       />
       <BreadcrumbSchema items={breadcrumbs} />
       <FAQSchema faqs={faqs} />
