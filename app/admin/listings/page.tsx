@@ -10,7 +10,7 @@ export default async function AdminListingsPage() {
 
   const { data: listings } = await supabase
     .from('listings')
-    .select('id,slug,title,type,locality,size_width_ft,size_height_ft,availability,is_published,is_featured,cover_photo,created_at')
+    .select('id,slug,title,type,city,locality,size_width_ft,size_height_ft,availability,is_published,is_featured,cover_photo,created_at')
     .order('created_at', { ascending: false })
 
   return (

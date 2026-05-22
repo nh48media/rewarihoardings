@@ -62,7 +62,7 @@ const LISTING_TYPES = [
 // Localities are fetched from DB — see props
 
 const FACINGS = ['North','South','East','West','NH-48 Inbound','NH-48 Outbound','Both Sides']
-const STRUCTURES = ['Ground-mounted','Rooftop','Bridge-mounted','Wall','Gantry span']
+const STRUCTURES = ['Ground-mounted','Rooftop','Bridge-mounted','Wall','Gantry span','Pole-mounted']
 const ILLUM_TYPES = ['Frontlit','Backlit','LED','Neon']
 
 function slugify(text: string) {
@@ -72,14 +72,17 @@ function slugify(text: string) {
 function autoMetaTitle(f: FormData) {
   if (!f.type || !f.locality) return ''
   const size = f.size_width_ft && f.size_height_ft ? ` | ${f.size_width_ft}×${f.size_height_ft} ft` : ''
-  return `${f.type.charAt(0).toUpperCase() + f.type.slice(1)} at ${f.locality}, Rewari${size} | Rewari Hoardings`
+  const city = f.city || 'Rewari'
+  return `${f.type.charAt(0).toUpperCase() + f.type.slice(1)} at ${f.locality}, ${city}${size} | Rewari Hoardings`
 }
 
 function autoMetaDesc(f: FormData) {
   if (!f.type || !f.locality) return ''
   const size = f.size_width_ft && f.size_height_ft ? `${f.size_width_ft}×${f.size_height_ft} ft ` : ''
   const traffic = f.traffic_count ? ` ${f.traffic_count}.` : ''
-  return `Book a ${size}${f.type} at ${f.landmark || f.locality}, ${f.locality}, Rewari.${traffic} Get quote: +91 8168740234.`
+  const city = f.city || 'Rewari'
+  const location = f.landmark ? `${f.landmark}, ${f.locality}` : f.locality
+  return `Book a ${size}${f.type} at ${location}, ${city}.${traffic} Get quote: +91 8168740234.`
 }
 
 interface Props {
@@ -135,13 +138,16 @@ export default function ListingForm({ existing, localities: localitiesProp }: Pr
   const [saving, setSaving] = useState(false)
   const [error, setError] = useState('')
   const [slugManual, setSlugManual] = useState(isEdit)
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
+  const [deleting, setDeleting] = useState(false)
 
-  // Auto-slug from title
+  // Auto-slug from title + city
   useEffect(() => {
     if (!slugManual && form.title) {
-      setForm(f => ({ ...f, slug: slugify(f.title) + '-rewari' }))
+      const citySlug = form.city ? slugify(form.city) : 'rewari'
+      setForm(f => ({ ...f, slug: slugify(f.title) + '-' + citySlug }))
     }
-  }, [form.title, slugManual])
+  }, [form.title, form.city, slugManual])
 
   // Auto meta from form data
   useEffect(() => {
@@ -187,7 +193,7 @@ export default function ListingForm({ existing, localities: localitiesProp }: Pr
     if (coverPhoto === url) setCoverPhoto(photos.find(p => p !== url) ?? '')
   }
 
-  async function handleSave(publish: boolean) {
+  async function handleSave(opts: { revalidate?: boolean } = {}) {
     setSaving(true)
     setError('')
 
@@ -219,7 +225,7 @@ export default function ListingForm({ existing, localities: localitiesProp }: Pr
       audience_profile: form.audience_profile || null,
       availability: form.availability as 'available' | 'booked' | 'coming-soon',
       is_featured: form.is_featured,
-      is_published: publish,
+      is_published: form.is_published,
       notes_internal: form.notes_internal || null,
       meta_title: form.meta_title || null,
       meta_description: form.meta_description || null,
@@ -240,18 +246,34 @@ export default function ListingForm({ existing, localities: localitiesProp }: Pr
       return
     }
 
-    // Trigger ISR revalidation
-    await fetch('/api/revalidate', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        secret: process.env.NEXT_PUBLIC_REVALIDATE_SECRET,
-        slug: form.slug,
-        type: form.type,
-        locality: form.locality,
-      }),
-    }).catch(() => {})
+    if (opts.revalidate) {
+      await fetch('/api/revalidate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          secret: process.env.NEXT_PUBLIC_REVALIDATE_SECRET,
+          slug: form.slug,
+          type: form.type,
+          locality: form.locality,
+        }),
+      }).catch(() => {})
+    }
 
+    startTransition(() => router.push('/admin/listings'))
+    router.refresh()
+  }
+
+  async function handleDelete() {
+    if (!existing) return
+    setDeleting(true)
+    const supabase = createClient()
+    const { error: delErr } = await supabase.from('listings').delete().eq('id', existing.id)
+    if (delErr) {
+      setError(delErr.message)
+      setDeleting(false)
+      setShowDeleteModal(false)
+      return
+    }
     startTransition(() => router.push('/admin/listings'))
     router.refresh()
   }
@@ -292,7 +314,7 @@ export default function ListingForm({ existing, localities: localitiesProp }: Pr
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4">
+        <div className="grid grid-cols-3 gap-4">
           <div>
             <label className="block text-gray-400 text-xs mb-1.5 font-condensed uppercase tracking-wider">Format Type *</label>
             <select value={form.type} onChange={e => set('type', e.target.value)}
@@ -300,6 +322,12 @@ export default function ListingForm({ existing, localities: localitiesProp }: Pr
               <option value="">Select type…</option>
               {LISTING_TYPES.map(t => <option key={t} value={t}>{t}</option>)}
             </select>
+          </div>
+          <div>
+            <label className="block text-gray-400 text-xs mb-1.5 font-condensed uppercase tracking-wider">City *</label>
+            <input value={form.city} onChange={e => set('city', e.target.value)}
+              placeholder="Rewari"
+              className="w-full bg-[#0d0d0d] border border-[#2a2a2a] text-white px-3 py-2.5 rounded-lg text-sm focus:outline-none focus:border-[#FFE600] transition-colors" />
           </div>
           <div>
             <label className="block text-gray-400 text-xs mb-1.5 font-condensed uppercase tracking-wider">Locality *</label>
@@ -574,21 +602,56 @@ export default function ListingForm({ existing, localities: localitiesProp }: Pr
       {/* Sticky action bar */}
       <div className="fixed bottom-0 left-56 right-0 bg-[#111111] border-t border-[#1e1e1e] px-6 py-4 flex items-center gap-3">
         {isEdit && (
-          <a href={`/listing/${form.slug}`} target="_blank" rel="noopener noreferrer"
-            className="text-gray-400 hover:text-white text-sm font-condensed border border-[#2a2a2a] px-4 py-2.5 rounded-lg hover:bg-[#1a1a1a] transition-colors">
-            Preview ↗
-          </a>
+          <>
+            <a href={`https://rewarihoardings.com/listing/${form.slug}`} target="_blank" rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white text-sm font-condensed border border-[#2a2a2a] px-4 py-2.5 rounded-lg hover:bg-[#1a1a1a] transition-colors">
+              Preview ↗
+            </a>
+            <button type="button" onClick={() => setShowDeleteModal(true)} disabled={saving || deleting}
+              className="text-red-400 hover:text-red-300 text-sm font-condensed border border-red-500/20 px-4 py-2.5 rounded-lg hover:bg-red-500/10 transition-colors disabled:opacity-50">
+              Delete
+            </button>
+          </>
         )}
         <div className="flex-1" />
-        <button type="button" onClick={() => handleSave(false)} disabled={saving}
+        <button type="button" onClick={() => handleSave({})} disabled={saving}
           className="bg-[#1a1a1a] border border-[#2a2a2a] text-gray-300 font-condensed font-medium px-5 py-2.5 rounded-lg hover:bg-[#222] transition-colors disabled:opacity-50 text-sm">
-          {saving ? 'Saving…' : 'Save as Draft'}
+          {saving ? 'Saving…' : 'Save Changes'}
         </button>
-        <button type="button" onClick={() => handleSave(true)} disabled={saving}
-          className="bg-[#FFE600] text-[#0A0A0A] font-condensed font-bold px-5 py-2.5 rounded-lg hover:bg-yellow-300 transition-colors disabled:opacity-50 text-sm">
-          {saving ? 'Saving…' : 'Save & Publish'}
+        <button type="button" onClick={() => handleSave({ revalidate: true })} disabled={saving}
+          className="bg-[#1a1a1a] border border-[#FFE600]/30 text-[#FFE600] font-condensed font-medium px-5 py-2.5 rounded-lg hover:bg-[#FFE600]/10 transition-colors disabled:opacity-50 text-sm">
+          {saving ? 'Saving…' : 'Save & Revalidate'}
         </button>
       </div>
+
+      {/* Delete confirmation modal */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 bg-black/70 z-50 flex items-center justify-center p-4">
+          <div className="bg-[#111111] border border-[#2a2a2a] rounded-xl p-6 max-w-sm w-full shadow-2xl">
+            <h3 className="text-white font-condensed font-bold text-lg mb-2">Delete listing?</h3>
+            <p className="text-gray-400 text-sm mb-1">
+              <span className="text-white">&ldquo;{form.title}&rdquo;</span> will be permanently removed from the database and all public pages.
+            </p>
+            <p className="text-red-400/80 text-xs mb-6">This cannot be undone.</p>
+            <div className="flex gap-3 justify-end">
+              <button
+                onClick={() => setShowDeleteModal(false)}
+                disabled={deleting}
+                className="px-4 py-2 rounded-lg bg-[#1a1a1a] border border-[#2a2a2a] text-gray-400 hover:text-white text-sm font-condensed transition-colors disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleDelete}
+                disabled={deleting}
+                className="px-4 py-2 rounded-lg bg-red-500/20 text-red-400 hover:bg-red-500/30 border border-red-500/20 text-sm font-condensed transition-colors disabled:opacity-50"
+              >
+                {deleting ? 'Deleting…' : 'Delete permanently'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

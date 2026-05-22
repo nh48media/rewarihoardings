@@ -17,12 +17,22 @@ export default async function EditListingPage({ params }: { params: { id: string
 
   const localities: string[] = Array.isArray(setting?.value) ? setting.value as string[] : []
 
+  const updatedAt = listing.updated_at
+    ? new Date(listing.updated_at).toLocaleString('en-IN', {
+        day: '2-digit', month: 'short', year: 'numeric',
+        hour: '2-digit', minute: '2-digit',
+      })
+    : null
+
   return (
     <div className="p-6">
       <div className="flex items-center justify-between mb-6">
         <div>
           <h1 className="text-white text-2xl font-condensed font-bold tracking-wide">Edit Listing</h1>
           <p className="text-gray-500 text-sm mt-1 truncate max-w-md">{listing.title}</p>
+          {updatedAt && (
+            <p className="text-gray-600 text-xs mt-0.5">Last updated {updatedAt}</p>
+          )}
         </div>
         <Link
           href={`/listing/${listing.slug}`}

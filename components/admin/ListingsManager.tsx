@@ -11,6 +11,7 @@ type ListingRow = {
   slug: string
   title: string
   type: string
+  city: string
   locality: string
   size_width_ft: number | null
   size_height_ft: number | null
@@ -34,19 +35,25 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
   const [, startTransition] = useTransition()
   const [search, setSearch] = useState('')
   const [typeFilter, setTypeFilter] = useState('')
+  const [cityFilter, setCityFilter] = useState('')
   const [localityFilter, setLocalityFilter] = useState('')
   const [availFilter, setAvailFilter] = useState('')
+  const [publishedFilter, setPublishedFilter] = useState('')
   const [page, setPage] = useState(0)
 
   // Unique filter options from data
   const types      = [...new Set(listings.map(l => l.type))].sort()
+  const cities     = [...new Set(listings.map(l => l.city).filter(Boolean))].sort()
   const localities = [...new Set(listings.map(l => l.locality))].sort()
 
   const filtered = listings.filter(l => {
-    if (search      && !l.title.toLowerCase().includes(search.toLowerCase()) && !l.slug.toLowerCase().includes(search.toLowerCase())) return false
+    if (search         && !l.title.toLowerCase().includes(search.toLowerCase()) && !l.slug.toLowerCase().includes(search.toLowerCase())) return false
     if (typeFilter     && l.type !== typeFilter) return false
+    if (cityFilter     && l.city !== cityFilter) return false
     if (localityFilter && l.locality !== localityFilter) return false
     if (availFilter    && l.availability !== availFilter) return false
+    if (publishedFilter === 'published'   && !l.is_published) return false
+    if (publishedFilter === 'unpublished' && l.is_published)  return false
     return true
   })
 
@@ -86,6 +93,16 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
           <option value="">All Types</option>
           {types.map(t => <option key={t} value={t}>{t}</option>)}
         </select>
+        {cities.length > 1 && (
+          <select
+            value={cityFilter}
+            onChange={e => { setCityFilter(e.target.value); setLocalityFilter(''); setPage(0) }}
+            className="bg-[#111111] border border-[#1e1e1e] text-gray-400 px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-[#FFE600] transition-colors"
+          >
+            <option value="">All Cities</option>
+            {cities.map(c => <option key={c} value={c}>{c}</option>)}
+          </select>
+        )}
         <select
           value={localityFilter}
           onChange={e => { setLocalityFilter(e.target.value); setPage(0) }}
@@ -103,6 +120,15 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
           <option value="available">Available</option>
           <option value="booked">Booked</option>
           <option value="coming-soon">Coming Soon</option>
+        </select>
+        <select
+          value={publishedFilter}
+          onChange={e => { setPublishedFilter(e.target.value); setPage(0) }}
+          className="bg-[#111111] border border-[#1e1e1e] text-gray-400 px-3 py-2 rounded-lg text-sm focus:outline-none focus:border-[#FFE600] transition-colors"
+        >
+          <option value="">All Statuses</option>
+          <option value="published">Published</option>
+          <option value="unpublished">Draft</option>
         </select>
       </div>
 
@@ -132,7 +158,11 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
             </thead>
             <tbody className="divide-y divide-[#171717]">
               {paginated.map(listing => (
-                <tr key={listing.id} className="hover:bg-[#141414] transition-colors">
+                <tr
+                  key={listing.id}
+                  className="hover:bg-[#141414] transition-colors cursor-pointer"
+                  onClick={() => router.push(`/admin/listings/${listing.id}/edit`)}
+                >
                   {/* Thumbnail */}
                   <td className="px-4 py-3">
                     <div className="w-10 h-10 rounded-md bg-[#1a1a1a] overflow-hidden flex items-center justify-center shrink-0">
@@ -146,7 +176,7 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
                   {/* Title */}
                   <td className="px-4 py-3">
                     <p className="text-white font-medium truncate max-w-[180px]">{listing.title}</p>
-                    <p className="text-gray-600 text-xs truncate max-w-[180px]">/listing/{listing.slug}</p>
+                    <p className="text-gray-600 text-xs truncate max-w-[180px]">{listing.city} · {listing.locality}</p>
                   </td>
                   {/* Type */}
                   <td className="px-4 py-3 hidden md:table-cell">
@@ -169,7 +199,7 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
                     </span>
                   </td>
                   {/* Published toggle */}
-                  <td className="px-4 py-3 text-center">
+                  <td className="px-4 py-3 text-center" onClick={e => e.stopPropagation()}>
                     <button
                       onClick={() => toggleField(listing.id, 'is_published', !listing.is_published)}
                       className={`w-9 h-5 rounded-full transition-colors relative ${listing.is_published ? 'bg-green-500' : 'bg-[#2a2a2a]'}`}
@@ -179,7 +209,7 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
                     </button>
                   </td>
                   {/* Featured toggle */}
-                  <td className="px-4 py-3 text-center">
+                  <td className="px-4 py-3 text-center" onClick={e => e.stopPropagation()}>
                     <button
                       onClick={() => toggleField(listing.id, 'is_featured', !listing.is_featured)}
                       className={`w-9 h-5 rounded-full transition-colors relative ${listing.is_featured ? 'bg-[#FFE600]' : 'bg-[#2a2a2a]'}`}
@@ -189,7 +219,7 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
                     </button>
                   </td>
                   {/* Actions */}
-                  <td className="px-4 py-3 text-right">
+                  <td className="px-4 py-3 text-right" onClick={e => e.stopPropagation()}>
                     <div className="flex items-center justify-end gap-2">
                       <Link
                         href={`/admin/listings/${listing.id}/edit`}
