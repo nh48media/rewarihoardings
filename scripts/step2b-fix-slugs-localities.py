@@ -4,11 +4,14 @@ STEP 2b — Fix slug/locality issues from the bulk insert:
   2. Locality stored as slug-string for slides 2-8 ("rewari-railway-station") and slide 10 ("nh-48")
   3. Dharuhera slides have empty locality — derive from title
 """
-import json, re, requests
+import json, os, re, requests
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).parent.parent / ".env.local")
 
 SUPABASE_URL = "https://nkqanwzzvbadyzqgcmyi.supabase.co"
-SERVICE_KEY  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rcWFud3p6dmJhZHl6cWdjbXlpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTgzMTIxOCwiZXhwIjoyMDkxNDA3MjE4fQ.Ns-yges6pfgqBXQFPdomgqC5G8GzzcWHPhxucxYQnIU"
+SERVICE_KEY  = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or exit("ERROR: SUPABASE_SERVICE_ROLE_KEY not set in .env.local")
 
 HEADERS = {
     "apikey":        SERVICE_KEY,

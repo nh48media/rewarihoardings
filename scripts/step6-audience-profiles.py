@@ -4,10 +4,14 @@ STEP 6 — Generate and update audience_profile + meta_description for all listi
 155-char meta_description.
 Then trigger /api/revalidate for every slug.
 """
-import requests
+import os, requests
+from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv(Path(__file__).parent.parent / ".env.local")
 
 SUPABASE_URL = "https://nkqanwzzvbadyzqgcmyi.supabase.co"
-SERVICE_KEY  = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5rcWFud3p6dmJhZHl6cWdjbXlpIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTgzMTIxOCwiZXhwIjoyMDkxNDA3MjE4fQ.Ns-yges6pfgqBXQFPdomgqC5G8GzzcWHPhxucxYQnIU"
+SERVICE_KEY  = os.environ.get("SUPABASE_SERVICE_ROLE_KEY") or exit("ERROR: SUPABASE_SERVICE_ROLE_KEY not set in .env.local")
 SITE_URL     = "https://rewarihoardings.com"
 
 HEADERS = {
