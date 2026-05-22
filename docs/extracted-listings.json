@@ -1,0 +1,633 @@
+{
+  "meta": {
+    "source_file": "docs\\REWARI 24.03.2026 (1).pptx",
+    "total_slides": 25,
+    "section_dividers": [
+      "Rewari",
+      "Dharuhera"
+    ],
+    "listings_extracted": 23,
+    "images_extracted": 23
+  },
+  "listings": [
+    {
+      "title": "Railway Station Platform, Rewari",
+      "type": "railway-station",
+      "locality": "rewari-railway-station",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 2 — REWARI-RAILWAY STATION PLATFORM 20x10 NL",
+      "_slide": 2,
+      "_raw_title": "REWARI-RAILWAY STATION PLATFORM 20x10 NL",
+      "_images": [
+        "slide_02_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Railway Station Platform, Rewari",
+      "type": "railway-station",
+      "locality": "rewari-railway-station",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 3 — REWARI-RAILWAY STATION PLATFORM 20x10 NL",
+      "_slide": 3,
+      "_raw_title": "REWARI-RAILWAY STATION PLATFORM 20x10 NL",
+      "_images": [
+        "slide_03_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Railway Station Parking, Rewari",
+      "type": "railway-station",
+      "locality": "rewari-railway-station",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 4 — REWARI-RAILWAY STATION PARKING 20x10 NL",
+      "_slide": 4,
+      "_raw_title": "REWARI-RAILWAY STATION PARKING 20x10 NL",
+      "_images": [
+        "slide_04_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Railway Station Parking, Rewari",
+      "type": "railway-station",
+      "locality": "rewari-railway-station",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 5 — REWARI-RAILWAY STATION PARKING 20x10 NL",
+      "_slide": 5,
+      "_raw_title": "REWARI-RAILWAY STATION PARKING 20x10 NL",
+      "_images": [
+        "slide_05_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Nai Basti Railway Road, Rewari",
+      "type": "railway-station",
+      "locality": "rewari-railway-station",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 6 — REWARI-NAI BASTI RAILWAY ROAD 20x10 NL",
+      "_slide": 6,
+      "_raw_title": "REWARI-NAI BASTI RAILWAY ROAD 20x10 NL",
+      "_images": [
+        "slide_06_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Nai Basti Railway Road, Rewari",
+      "type": "railway-station",
+      "locality": "rewari-railway-station",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 7 — REWARI-NAI BASTI RAILWAY ROAD 20x10 NL",
+      "_slide": 7,
+      "_raw_title": "REWARI-NAI BASTI RAILWAY ROAD 20x10 NL",
+      "_images": [
+        "slide_07_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Railway Station Car Parking, Rewari",
+      "type": "railway-station",
+      "locality": "rewari-railway-station",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 8 — REWARI-RAILWAY STATION CAR PARKING 20x10 NL",
+      "_slide": 8,
+      "_raw_title": "REWARI-RAILWAY STATION CAR PARKING 20x10 NL",
+      "_images": [
+        "slide_08_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Mahendergarh Road — Csd Canteen, Rewari",
+      "type": "hoarding",
+      "locality": "dharan-road",
+      "city": "Rewari",
+      "landmark": "Csd Canteen",
+      "size_width_ft": 15,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 9 — REWARI-MAHENDERGARH ROAD NEAR CSD CANTEEN 15x10 NL",
+      "_slide": 9,
+      "_raw_title": "REWARI-MAHENDERGARH ROAD NEAR CSD CANTEEN 15x10 NL",
+      "_images": [
+        "slide_09_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Huda Bypass Chowk, Rewari",
+      "type": "hoarding",
+      "locality": "nh-48",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 10 — HUDA BYPASS CHOWK 20x10",
+      "_slide": 10,
+      "_raw_title": "HUDA BYPASS CHOWK 20x10",
+      "_images": [
+        "slide_10_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Pataudi Road, Rewari",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 11 — PATAUDI ROAD 20x10",
+      "_slide": 11,
+      "_raw_title": "PATAUDI ROAD 20x10",
+      "_images": [
+        "slide_11_img_02.png"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Rampura Road — Ahir College, Rewari",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Rewari",
+      "landmark": "Ahir College",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 12 — RAMPURA ROAD NEAR AHIR COLLEGE 20x10",
+      "_slide": 12,
+      "_raw_title": "RAMPURA ROAD NEAR AHIR COLLEGE 20x10",
+      "_images": [
+        "slide_12_img_02.png"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Bawal Road, Rewari",
+      "type": "hoarding",
+      "locality": "rewari-industrial-area",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 13 — BAWAL ROAD 20x10",
+      "_slide": 13,
+      "_raw_title": "BAWAL ROAD 20x10",
+      "_images": [
+        "slide_13_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Bitwana Road Crossing, Rewari",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 14 — BITWANA ROAD CROSSING 20x10",
+      "_slide": 14,
+      "_raw_title": "BITWANA ROAD CROSSING 20x10",
+      "_images": [
+        "slide_14_img_02.png"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Jhajjar Road, Rewari",
+      "type": "hoarding",
+      "locality": "kosli-road",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 24,
+      "size_height_ft": 12,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 15 — REWARI-JHAJJAR ROAD 24x12",
+      "_slide": 15,
+      "_raw_title": "REWARI-JHAJJAR ROAD 24x12",
+      "_images": [
+        "slide_15_img_03.png"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Pallawas Chowk, Rewari",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 24,
+      "size_height_ft": 12,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 16 — REWARI-PALLAWAS CHOWK 24x12",
+      "_slide": 16,
+      "_raw_title": "REWARI-PALLAWAS CHOWK 24x12",
+      "_images": [
+        "slide_16_img_03.png"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Piolet Chowk, Rewari",
+      "type": "hoarding",
+      "locality": "majra-chowk",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 17 — REWARI-PIOLET CHOWK 20x10",
+      "_slide": 17,
+      "_raw_title": "REWARI-PIOLET CHOWK 20x10",
+      "_images": [
+        "slide_17_ph_1.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Piolet Chowk, Rewari",
+      "type": "hoarding",
+      "locality": "majra-chowk",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 18 — REWARI-PIOLET CHOWK 20x10",
+      "_slide": 18,
+      "_raw_title": "REWARI-PIOLET CHOWK 20x10",
+      "_images": [
+        "slide_18_ph_1.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Kulana Road, Rewari",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 30,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 19 — REWARI- KULANA ROAD 30x10",
+      "_slide": 19,
+      "_raw_title": "REWARI- KULANA ROAD 30x10",
+      "_images": [
+        "slide_19_img_03.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Pallawas-Main Market, Rewari",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Rewari",
+      "landmark": "",
+      "size_width_ft": 30,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": true,
+      "illumination_type": "frontlit",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 20 — REWARI-PALLAWAS-MAIN MARKET 30x10",
+      "_slide": 20,
+      "_raw_title": "REWARI-PALLAWAS-MAIN MARKET 30x10",
+      "_images": [
+        "slide_20_img_03.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "City Center, Dharuhera",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Dharuhera",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 22 — CITY CENTER 20x10 NL",
+      "_slide": 22,
+      "_raw_title": "CITY CENTER 20x10 NL",
+      "_images": [
+        "slide_22_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": " — Bestech Flats, Dharuhera",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Dharuhera",
+      "landmark": "Bestech Flats",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 23 — OPP BESTECH FLATS 20x10 NL",
+      "_slide": 23,
+      "_raw_title": "OPP BESTECH FLATS 20x10 NL",
+      "_images": [
+        "slide_23_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": "Sec 6 Entry From Nhai, Dharuhera",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Dharuhera",
+      "landmark": "",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 24 — SEC 6 ENTRY FROM NHAI 20x10 NL",
+      "_slide": 24,
+      "_raw_title": "SEC 6 ENTRY FROM NHAI 20x10 NL",
+      "_images": [
+        "slide_24_img_02.jpg"
+      ],
+      "_extra_texts": []
+    },
+    {
+      "title": " — Subash Chowk, Dharuhera",
+      "type": "hoarding",
+      "locality": "",
+      "city": "Dharuhera",
+      "landmark": "Subash Chowk",
+      "size_width_ft": 20,
+      "size_height_ft": 10,
+      "facing": "",
+      "illuminated": false,
+      "illumination_type": "",
+      "structure_type": "",
+      "traffic_count": "",
+      "availability": "available",
+      "is_featured": false,
+      "notes_internal": "Extracted from agency PPTX — slide 25 — NEAR SUBASH CHOWK 20x10 NL",
+      "_slide": 25,
+      "_raw_title": "NEAR SUBASH CHOWK 20x10 NL",
+      "_images": [
+        "slide_25_img_02.png"
+      ],
+      "_extra_texts": []
+    }
+  ],
+  "flags": [
+    {
+      "slide": 1,
+      "reason": "Section divider — city set to 'Rewari'"
+    },
+    {
+      "slide": 11,
+      "title": "PATAUDI ROAD 20x10",
+      "city": "Rewari",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 12,
+      "title": "RAMPURA ROAD NEAR AHIR COLLEGE 20x10",
+      "city": "Rewari",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 14,
+      "title": "BITWANA ROAD CROSSING 20x10",
+      "city": "Rewari",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 16,
+      "title": "REWARI-PALLAWAS CHOWK 24x12",
+      "city": "Rewari",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 19,
+      "title": "REWARI- KULANA ROAD 30x10",
+      "city": "Rewari",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 20,
+      "title": "REWARI-PALLAWAS-MAIN MARKET 30x10",
+      "city": "Rewari",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 21,
+      "reason": "Section divider — city set to 'Dharuhera'"
+    },
+    {
+      "slide": 22,
+      "title": "CITY CENTER 20x10 NL",
+      "city": "Dharuhera",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 23,
+      "title": "OPP BESTECH FLATS 20x10 NL",
+      "city": "Dharuhera",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 24,
+      "title": "SEC 6 ENTRY FROM NHAI 20x10 NL",
+      "city": "Dharuhera",
+      "missing": [
+        "locality"
+      ]
+    },
+    {
+      "slide": 25,
+      "title": "NEAR SUBASH CHOWK 20x10 NL",
+      "city": "Dharuhera",
+      "missing": [
+        "locality"
+      ]
+    }
+  ]
+}

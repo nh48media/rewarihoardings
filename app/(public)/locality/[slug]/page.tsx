@@ -19,6 +19,10 @@ const ALL_LOCALITY_SLUGS = [
   'gurudwara-chowk', 'new-grain-market', 'majra-chowk',
   'jat-college-road', 'circular-road', 'dharan-road',
   'rewari-industrial-area', 'kosli-road',
+  // Added from agency PPTX inventory
+  'pataudi-road', 'rampura-road', 'bitwana-road',
+  'pallawas-chowk', 'kulana-road', 'mahendergarh-road',
+  'jhajjar-road', 'bawal-road', 'pilot-chowk',
 ] as const
 
 // ── Locality editorial data ────────────────────────────────────────────────────
@@ -225,6 +229,123 @@ const LOCALITY_DATA: Record<string, LocalityData> = {
       { q: 'Who travels on Kosli Road and what is the traffic volume?', a: 'Kosli Road carries daily commuters between Rewari and Kosli town (roughly 25 km), agricultural and light commercial traffic from villages along the route, and residents of south Rewari residential areas. Traffic volume is moderate — lower than NH-48 but significant for targeting audiences moving between the two towns.' },
       { q: 'Is Kosli Road a good location for a campaign targeting southern Rewari districts?', a: 'Yes — if your campaign targets Kosli, Jhajjar or the southern Rewari hinterland, Kosli Road sites near the city edge capture outbound traffic effectively. For campaigns targeting south Rewari city residents, sites near the city-end junction give the best density of local impressions.' },
       { q: 'What formats are available on Kosli Road?', a: 'Unipoles and hoardings at the main junction near city limits are the anchor formats. Wall paintings on open roadside structures offer long-term peripheral coverage. Flex banners near the first few kilometres of the road target the residential zones closest to Rewari city.' },
+    ],
+  },
+
+  'pataudi-road': {
+    name: 'Pataudi Road',
+    tagline: 'West Rewari exit road connecting to Pataudi and Gurugram district',
+    desc: 'Pataudi Road runs west from Rewari city toward Pataudi town and the broader Gurugram district boundary. It carries a mix of inter-town commuters, agricultural traffic from western villages, and residents of the city\'s western periphery. Hoardings along this corridor reach a largely local and semi-rural audience — effective for agri-input brands, rural FMCG, and financial services targeting households west of Rewari.',
+    character: 'Town Connector',
+    nearby: ['nh-48', 'rewari-industrial-area', 'kosli-road'],
+    faqs: [
+      { q: 'Who uses Pataudi Road in Rewari?', a: 'Pataudi Road carries daily inter-town commuters, agricultural traffic from western Rewari villages, and residents of peripheral colonies near the city\'s western edge. It is a lower-volume road compared to NH-48 or Delhi Road, making it well-suited to hyperlocal campaigns rather than mass brand awareness.' },
+      { q: 'What OOH formats work on Pataudi Road?', a: 'Standard hoardings at road junctions are the primary format. Wall paintings on roadside structures offer long-term low-cost exposure. Flex banners work well for local event and service campaigns targeting the immediate western Rewari catchment.' },
+      { q: 'Is Pataudi Road relevant for rural-segment advertisers?', a: 'Yes — the rural and semi-rural audience on this corridor is receptive to agri-input brands, rural microfinance, cooperative banking, and FMCG products targeting village households. Campaign costs are low relative to the frequency with which the same local audience passes the same locations.' },
+    ],
+  },
+
+  'rampura-road': {
+    name: 'Rampura Road',
+    tagline: 'Inner Rewari road near Ahir College — student and residential corridor',
+    desc: 'Rampura Road is an inner-city Rewari road running near Ahir College and the Company Bagh area (coordinates: 28.1918°N 76.6058°E). It carries a mix of student and residential traffic, with the college generating a predictable daily footfall of students, parents, and faculty. Hoardings here reach an education-oriented audience at close range — well-suited to coaching institutes, skill development programmes, and local service brands targeting the Rampura Road residential and college catchment.',
+    character: 'Inner Road',
+    nearby: ['jat-college-road', 'circular-road', 'rewari-railway-station'],
+    faqs: [
+      { q: 'What makes Rampura Road a useful OOH location in Rewari?', a: 'Rampura Road passes near Ahir College and the Company Bagh residential area, giving it a stable daily audience of students, families, and local residents. It is a close-range format environment — hoardings here build high repeat-frequency with the same neighbourhood audience over a campaign.' },
+      { q: 'Which brands advertise effectively on Rampura Road?', a: 'Coaching institutes, tuition centres, and college-related service brands find Rampura Road particularly effective during admission season (March–June). Healthcare providers, FMCG brands, and local service businesses also perform well targeting the nearby residential catchment.' },
+      { q: 'What OOH formats are available on Rampura Road?', a: 'Standard roadside hoardings at the main road bends are the primary format. A 20×10 ft hoarding here gives close-range impressions to pedestrians and slow-moving vehicles near the college entry. Wall paintings on compound walls add ambient long-term coverage at low cost.' },
+    ],
+  },
+
+  'bitwana-road': {
+    name: 'Bitwana Road Crossing',
+    tagline: 'Village approach road — rural and agricultural catchment',
+    desc: 'Bitwana Road Crossing is a junction on the approach road toward Bitwana and surrounding villages north of Rewari city. It carries agricultural traffic, village commuters, and light commercial vehicles between Rewari and its northern rural hinterland. Hoardings at this crossing reach a predominantly rural audience — farmers, village traders, and rural household consumers making periodic visits to Rewari for market and services.',
+    character: 'Village Connector',
+    nearby: ['nh-48', 'majra-chowk', 'new-grain-market'],
+    faqs: [
+      { q: 'Who passes through Bitwana Road Crossing?', a: 'Bitwana Road Crossing sees traffic from villages north of Rewari — farmers bringing produce to city markets, rural residents commuting for government services, and light commercial vehicles on the village-city route. It is a low-volume but geographically concentrated rural audience.' },
+      { q: 'What OOH formats suit Bitwana Road Crossing?', a: 'A standard roadside hoarding at the crossing junction is the most effective format — it captures traffic from all approach directions. Wall paintings on junction corner walls add long-term ambient exposure. Flex banners work for seasonal agricultural campaigns timed to Rabi and Kharif harvests.' },
+      { q: 'Is Bitwana Road Crossing useful for agri-input campaigns?', a: 'Yes — the village-oriented audience that uses this corridor is exactly the farmer and rural household demographic that purchases seeds, fertilisers, agricultural tools, and rural financial products. Campaigns timed around Rabi sowing (October–November) and harvest (March–April) achieve the highest intent-match.' },
+    ],
+  },
+
+  'pallawas-chowk': {
+    name: 'Pallawas Chowk',
+    tagline: 'Junction on the Rewari–Pallawas corridor',
+    desc: 'Pallawas Chowk is a junction on the road connecting Rewari to Pallawas town and the wider southern district. It serves as a convergence point for commuters and traders traveling between Rewari and the smaller towns to the south and west. Hoardings at the chowk and along the Pallawas Main Market stretch reach a district-town audience — shoppers, traders, and commuters on the Rewari–Pallawas inter-town route.',
+    character: 'Junction',
+    nearby: ['kosli-road', 'dharan-road', 'rewari-industrial-area'],
+    faqs: [
+      { q: 'What is Pallawas Chowk\'s audience?', a: 'Pallawas Chowk draws residents from Pallawas town and surrounding villages making trips to Rewari for trade, government services, and retail. The audience is predominantly rural-to-semi-urban — a good match for FMCG brands, agri-input companies, rural banking, and local service businesses.' },
+      { q: 'Are there two hoarding positions at Pallawas Chowk?', a: 'Yes — there are two distinct hoarding positions along this corridor: one at Pallawas Chowk junction (24×12 ft) and one near Pallawas Main Market (30×10 ft). Both reach the same core Pallawas-corridor audience from different positions along the route, making a two-site campaign efficient for full-corridor coverage.' },
+      { q: 'What OOH formats are available on the Pallawas corridor?', a: 'Standard hoardings are the primary format — 24×12 ft at the chowk and 30×10 ft at the market stretch. Wall paintings on market perimeter walls add long-term ambient coverage. Flex banners at the market entry work for seasonal sale and event campaigns.' },
+    ],
+  },
+
+  'kulana-road': {
+    name: 'Kulana Road',
+    tagline: 'Northern Rewari approach road toward Kulana and Jhajjar district',
+    desc: 'Kulana Road runs north from Rewari city toward Kulana and the Jhajjar district boundary. It carries inter-town and agricultural traffic from Rewari\'s northern hinterland — a mix of village commuters, agri-produce traders, and light commercial vehicles. Hoardings along this corridor at 30×10 ft give wide-format visibility to the rural and semi-rural audience heading into Rewari from the north.',
+    character: 'Town Connector',
+    nearby: ['nh-48', 'majra-chowk', 'bitwana-road'],
+    faqs: [
+      { q: 'Who uses Kulana Road in Rewari?', a: 'Kulana Road carries villagers and farmers from Rewari\'s northern villages heading to the city for market, services, and trade — along with inter-town commuters between Rewari and Jhajjar district towns. Traffic volume is moderate with peaks on market days and agricultural seasons.' },
+      { q: 'What OOH format is available on Kulana Road?', a: 'A 30×10 ft standard hoarding is the anchor format on this corridor — wide format for good visibility on an open approach road. Wall paintings on roadside structures offer long-term coverage at lower recurring cost for brands with a rural-audience mandate.' },
+      { q: 'Is Kulana Road good for northern Rewari district campaigns?', a: 'Yes — it is one of the few OOH positions that captures the northern Rewari–Jhajjar corridor audience that NH-48 and Delhi Road miss entirely. For brands targeting the rural northern district hinterland, Kulana Road gives unique access at accessible cost.' },
+    ],
+  },
+
+  'mahendergarh-road': {
+    name: 'Mahendergarh Road',
+    tagline: 'South exit road — connecting Rewari to Mahendragarh and Narnaul',
+    desc: 'Mahendergarh Road runs south from Rewari toward Mahendragarh and Narnaul — towns that are key centres for the southern Haryana and Rajasthan trade routes. The road carries daily commuters between Rewari and the Mahendragarh district, agri traders, government staff, and students traveling between the two towns. A 15×10 ft hoarding near the CSD Canteen landmark reaches this inter-district audience at one of the road\'s most recognisable reference points.',
+    character: 'Town Connector',
+    nearby: ['dharan-road', 'kosli-road', 'rewari-industrial-area'],
+    faqs: [
+      { q: 'Who travels on Mahendergarh Road from Rewari?', a: 'Mahendergarh Road carries daily commuters between Rewari and Mahendragarh city (roughly 35 km south), students attending colleges in Narnaul and Rewari, government employees, and agri traders on the Rewari–Narnaul–Bhiwani corridor. It is an inter-district route with a predictable daily flow.' },
+      { q: 'What OOH formats are available near the CSD Canteen on Mahendergarh Road?', a: 'A 15×10 ft roadside hoarding near the CSD Canteen landmark is the available format — the canteen is a well-known landmark that makes the location easy for campaign audience referencing. Flex banners and wall paintings on approach-road structures offer supplementary coverage at lower cost.' },
+      { q: 'Is Mahendergarh Road relevant for brands targeting southern Haryana?', a: 'Yes — brands with a dual Rewari + Mahendragarh mandate find this corridor efficient. A single hoarding position here captures audiences traveling between the two district headquarters, making it a cost-effective cross-district OOH position for banking, telecom, and FMCG brands with a southern Haryana expansion mandate.' },
+    ],
+  },
+
+  'jhajjar-road': {
+    name: 'Jhajjar Road',
+    tagline: 'Northeast Rewari corridor toward Jhajjar district',
+    desc: 'Jhajjar Road connects Rewari northeast toward Jhajjar district — one of the inter-district arteries carrying commuters, agri traders, and government staff between the two district headquarters. The 24×12 ft hoarding format available on this road delivers wide-format visibility to a steady flow of inter-district traffic that moves between Rewari and Jhajjar\'s towns and villages along this route.',
+    character: 'Town Connector',
+    nearby: ['majra-chowk', 'circular-road', 'kulana-road'],
+    faqs: [
+      { q: 'What audience does Jhajjar Road reach from Rewari?', a: 'Jhajjar Road reaches daily commuters between Rewari and Jhajjar district towns, agri traders traveling between the two districts, and government employees on the inter-district route. It is a mid-volume corridor with a predictable audience of inter-district travelers not reached by city-centre formats.' },
+      { q: 'What size hoarding is available on Jhajjar Road?', a: 'A 24×12 ft roadside hoarding is available on the Jhajjar Road corridor — a larger format than the standard 20×10 ft that provides strong visibility on an open approach road where viewing distances are greater than in city-centre environments.' },
+      { q: 'How does Jhajjar Road compare to other exit roads in Rewari?', a: 'Jhajjar Road is similar in character to Jhajjar and Kosli roads — a mid-volume exit corridor with a rural and inter-district audience. It complements NH-48 and Delhi Road campaigns that target urban and highway audiences by adding reach into the northeast district hinterland.' },
+    ],
+  },
+
+  'bawal-road': {
+    name: 'Bawal Road',
+    tagline: 'South Rewari industrial corridor toward Bawal and IMT Bawal',
+    desc: 'Bawal Road runs south from Rewari toward Bawal town and IMT Bawal — one of Haryana\'s major industrial townships. The road carries significant daily worker commute traffic: HPCL refinery staff, auto components industry workers, and IMT Bawal factory employees commuting from Rewari. Hoardings on this corridor reach an industrial-worker and B2B audience with strong daily frequency — a distinct demographic from Rewari\'s consumer market and commuter belt.',
+    character: 'Industrial Corridor',
+    nearby: ['rewari-industrial-area', 'kosli-road', 'dharan-road'],
+    faqs: [
+      { q: 'Who travels on Bawal Road from Rewari daily?', a: 'Bawal Road carries HPCL refinery workers commuting to Bawal (roughly 20 km south), auto components and engineering goods industry staff, IMT Bawal factory workers, and logistics operators serving the industrial township. This makes it one of Rewari\'s most concentrated blue- and grey-collar commuter corridors.' },
+      { q: 'What brands perform well on Bawal Road?', a: 'Worker-facing consumer brands (two-wheelers, mobile phones, FMCG), industrial tool and safety equipment suppliers, group health insurance, PF-linked financial products, and recruitment services for factory roles all perform strongly on Bawal Road. The daily-commuter pattern means high weekly repeat frequency for any brand positioned here.' },
+      { q: 'What OOH formats are available on Bawal Road?', a: 'Standard 20×10 ft roadside hoardings at the main junctions on the corridor are the primary format. Wall paintings on factory or godown boundary walls near the city edge add long-term exposure. Entry-point gate branding at industrial facilities near the Bawal Road stretch reaches workers at point of arrival.' },
+    ],
+  },
+
+  'pilot-chowk': {
+    name: 'Pilot Chowk',
+    tagline: 'Inner-city Rewari junction — residential and daily commuter reach',
+    desc: 'Pilot Chowk (sometimes written Piolet Chowk) is an inner-city junction in Rewari connecting residential neighbourhoods and inner roads. As a local convergence point, it sees consistent daily traffic from Rewari city residents, auto and e-rickshaw services, and commuters moving between the city\'s residential colonies and the central market area. Two hoarding positions at this junction offer both-sides visibility to the daily local audience.',
+    character: 'Junction',
+    nearby: ['majra-chowk', 'circular-road', 'gurudwara-chowk'],
+    faqs: [
+      { q: 'What is the audience at Pilot Chowk?', a: 'Pilot Chowk draws a predominantly local Rewari residential audience — city residents, daily commuters using inner-city routes, shoppers moving between residential colonies and markets, and e-rickshaw and auto passengers on neighbourhood routes. It is a high-repeat, low-distance format environment ideal for local brand frequency campaigns.' },
+      { q: 'Are there two hoarding positions at Pilot Chowk?', a: 'Yes — there are two 20×10 ft hoarding positions at Pilot Chowk, offering different facing directions on the junction approaches. A two-position campaign here achieves near-complete visual coverage of the junction from all approach angles — effective for local service brands seeking junction dominance.' },
+      { q: 'How does Pilot Chowk compare to Gurudwara Chowk for local advertising?', a: 'Gurudwara Chowk has higher traffic volume as Rewari\'s central junction. Pilot Chowk offers similar junction-format benefits at typically lower cost — well-suited as a supplementary position alongside Gurudwara Chowk, or as a standalone site for campaigns targeting the specific residential neighbourhoods that feed into this junction.' },
     ],
   },
 }
