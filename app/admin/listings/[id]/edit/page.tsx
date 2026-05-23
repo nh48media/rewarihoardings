@@ -3,13 +3,14 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import ListingForm from '@/components/admin/ListingForm'
 
-export default async function EditListingPage({ params }: { params: { id: string } }) {
+export default async function EditListingPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/admin/login')
 
   const [{ data: listing }, { data: setting }] = await Promise.all([
-    supabase.from('listings').select('*').eq('id', params.id).single(),
+    supabase.from('listings').select('*').eq('id', id).single(),
     supabase.from('rh_settings').select('value').eq('key', 'rewari_localities').single(),
   ])
 

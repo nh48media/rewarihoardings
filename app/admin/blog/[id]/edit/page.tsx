@@ -3,7 +3,8 @@ import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
 import BlogForm from '@/components/admin/BlogForm'
 
-export default async function EditBlogPostPage({ params }: { params: { id: string } }) {
+export default async function EditBlogPostPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/admin/login')
@@ -11,7 +12,7 @@ export default async function EditBlogPostPage({ params }: { params: { id: strin
   const { data: post } = await supabase
     .from('rh_blog')
     .select('*')
-    .eq('id', params.id)
+    .eq('id', id)
     .single()
 
   if (!post) notFound()
