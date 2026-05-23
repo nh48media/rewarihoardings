@@ -1,6 +1,7 @@
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { createClient } from '@/lib/supabase/server'
+import BlogDeleteButton from '@/components/admin/BlogDeleteButton'
 
 function fmtDate(iso: string | null) {
   if (!iso) return '—'
@@ -89,6 +90,7 @@ export default async function AdminBlogPage() {
                         className="text-[#FFE600] hover:text-white text-xs font-condensed border border-[#FFE600]/30 px-2.5 py-1.5 rounded hover:bg-[#1a1a1a] transition-colors">
                         Edit
                       </Link>
+                      <BlogDeleteButton id={post.id} title={post.title} />
                     </div>
                   </td>
                 </tr>

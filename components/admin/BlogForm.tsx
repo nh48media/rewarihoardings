@@ -56,6 +56,8 @@ export default function BlogForm({ existing }: Props) {
 
   const [tab, setTab] = useState<'write' | 'preview'>('write')
   const [saving, setSaving] = useState(false)
+  const [deleting, setDeleting] = useState(false)
+  const [showDeleteModal, setShowDeleteModal] = useState(false)
   const [error, setError] = useState('')
   const [slugManual, setSlugManual] = useState(isEdit)
 
@@ -125,6 +127,15 @@ export default function BlogForm({ existing }: Props) {
       }),
     }).catch(() => {})
 
+    router.push('/admin/blog')
+    router.refresh()
+  }
+
+  async function handleDelete() {
+    if (!existing) return
+    setDeleting(true)
+    const supabase = createClient()
+    await supabase.from('rh_blog').delete().eq('id', existing.id)
     router.push('/admin/blog')
     router.refresh()
   }
@@ -286,6 +297,12 @@ export default function BlogForm({ existing }: Props) {
             Preview ↗
           </a>
         )}
+        {isEdit && (
+          <button type="button" onClick={() => setShowDeleteModal(true)} disabled={saving || deleting}
+            className="text-red-500 hover:text-red-400 text-sm font-condensed border border-red-500/20 px-4 py-2.5 rounded-lg hover:bg-red-500/10 transition-colors disabled:opacity-50">
+            Delete
+          </button>
+        )}
         <div className="flex-1" />
         <button type="button" onClick={() => handleSave(false)} disabled={saving}
           className="bg-[#1a1a1a] border border-[#2a2a2a] text-gray-300 font-condensed font-medium px-5 py-2.5 rounded-lg hover:bg-[#222] transition-colors disabled:opacity-50 text-sm">
@@ -296,6 +313,29 @@ export default function BlogForm({ existing }: Props) {
           {saving ? 'Saving…' : 'Save & Publish'}
         </button>
       </div>
+
+      {/* Delete confirmation modal */}
+      {showDeleteModal && (
+        <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50 p-4">
+          <div className="bg-[#111111] border border-[#2a2a2a] rounded-xl p-6 max-w-sm w-full">
+            <h3 className="text-white font-condensed font-bold text-lg mb-2">Delete post?</h3>
+            <p className="text-gray-400 text-sm mb-1">
+              <span className="text-white">{form.title}</span>
+            </p>
+            <p className="text-gray-600 text-xs mb-6">This cannot be undone.</p>
+            <div className="flex gap-3">
+              <button type="button" onClick={() => setShowDeleteModal(false)}
+                className="flex-1 bg-[#1a1a1a] border border-[#2a2a2a] text-gray-300 font-condensed px-4 py-2.5 rounded-lg hover:bg-[#222] transition-colors text-sm">
+                Cancel
+              </button>
+              <button type="button" onClick={handleDelete} disabled={deleting}
+                className="flex-1 bg-red-600 hover:bg-red-500 text-white font-condensed font-bold px-4 py-2.5 rounded-lg transition-colors disabled:opacity-50 text-sm">
+                {deleting ? 'Deleting…' : 'Delete permanently'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
