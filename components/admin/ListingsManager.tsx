@@ -221,6 +221,16 @@ export default function ListingsManager({ listings }: { listings: ListingRow[] }
                   {/* Actions */}
                   <td className="px-4 py-3 text-right" onClick={e => e.stopPropagation()}>
                     <div className="flex items-center justify-end gap-2">
+                      {listing.is_published && (
+                        <a
+                          href={`/listing/${listing.slug}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-gray-500 hover:text-white text-xs px-2.5 py-1.5 rounded bg-[#1a1a1a] hover:bg-[#222] transition-colors"
+                        >
+                          View ↗
+                        </a>
+                      )}
                       <Link
                         href={`/admin/listings/${listing.id}/edit`}
                         className="text-gray-400 hover:text-white text-xs px-2.5 py-1.5 rounded bg-[#1a1a1a] hover:bg-[#222] transition-colors"
